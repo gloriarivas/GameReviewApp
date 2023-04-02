@@ -6,6 +6,10 @@ Gloria Rivas-Bonilla
 .page{
     background-color: #82ADC9;
 }
+.pageHead{
+    color: #eeeeee;
+    text-align: center;
+}
 /*home page*/
 #mainHead{
     color: #eeeeee;
@@ -27,10 +31,6 @@ img{
 #frmSignUp label{
     color: #eeeeee;
 }
-#pageSignUp section h1{
-    color: #eeeeee;
-    text-align: center;
-}
 
 /*game list page*/
 
@@ -39,11 +39,6 @@ img{
 }
 
 /*about page*/
-
-#pageAbout section h1{
-    color: #eeeeee;
-    text-align: center;
-}
 #pageAbout h3{
     color: #eeeeee;
 }
@@ -55,10 +50,6 @@ img{
 
 #pageAddNewGame form{
     color: #eeeeee;
-}
-#pageAddNewGame section h1{
-    color: #eeeeee;
-    text-align: center;
 }
 .newGameHeader{
     display: flex;
@@ -86,10 +77,6 @@ img{
     align-items: center;
     justify-content: center;
 }
-#pageReviewsList section h1{
-    text-align: center;
-    color: #eeeeee;
-}
 .ratingHeader{
     color: #eeeeee;
 }
@@ -98,4 +85,18 @@ img{
     align-items: center;
     margin-bottom: 5px;
     padding-right: 15px;
+}
+
+/*add review page*/
+.hidden{
+    display: none;
+}
+.reviewForm{
+    background-color: #eeeeee;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+.reviewForm button{
+    margin-top: 10px;
 }

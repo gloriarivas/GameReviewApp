@@ -96,7 +96,7 @@ email:      grivas8325@conestogac.on.ca
 
 
             <section data-role="content">
-                <h1>Sign Up To Our Website</h1>
+                <h1 class="pageHead">Sign Up To Our Website</h1>
                 <form id="frmSignUp" name="frmSignUp">
 
                     <label for="txtFirstName">First Name:</label>
@@ -114,7 +114,7 @@ email:      grivas8325@conestogac.on.ca
 
                     <img src="img/CatWithForm.png">
                     <button id="btnSignUp" name="btnSignUp">Sign Up</button>
-                    <button id="btnMembers" name="btnMembers">See All Members</button>
+                    <a href="#pageAllMembers" data-role="button">See All Members</a>
                 </form>
             </section>
 
@@ -150,7 +150,7 @@ email:      grivas8325@conestogac.on.ca
             </header>
 
             <section data-role="content">
-                <h1 id="gameHeader">Here is a list of our games!</h1>
+                <h1 class="pageHead">Here is a list of our games!</h1>
                 <!--change this to db stuff-->
                 <div data-role="collapsible" data-collapsed-icon="carat-d"
                      data-expanded-icon="carat-u">
@@ -161,7 +161,7 @@ email:      grivas8325@conestogac.on.ca
                         Created by: Mojang <br>
                         Rating: 10/10 <br><!--Will make values change automatically-->
                         <a href="#pageReviewsList">Reviews: 5</a><br>
-                        <a href="#" id="btnReview" class="ui-btn ui-corner-all"
+                        <a href="#pageAddReview" id="btnReview" class="ui-btn ui-corner-all"
                            >Write a Review
                         </a>
                     </p>
@@ -201,7 +201,7 @@ email:      grivas8325@conestogac.on.ca
             </header>
 
             <section data-role="content">
-                <h1>About The Developer</h1>
+                <h1 class="pageHead">About The Developer</h1>
                 <h3>
                     Gloria Rivas-Bonilla <br>
                     grivas8325@conestogac.on.ca <br>
@@ -243,7 +243,7 @@ email:      grivas8325@conestogac.on.ca
                     <img src="img/joyconblue.png" class="left">
                     <!--<a target="_blank" href="https://icons8.com/icon/FdGD2HZEsXHj/joy-con">Joy
                     Con</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
-                    <h1>New Game</h1>
+                    <h1 class="pageHead">New Game</h1>
                     <img src="img/joyconred.png" class="right">
                 </div>
                 <form>
@@ -303,11 +303,11 @@ email:      grivas8325@conestogac.on.ca
 
             <section data-role="content">
                 <div class="reviewListHeader">
-                    <h1>Reviews for Minecraft</h1>
+                    <h1 class="pageHead">Reviews for Minecraft</h1>
                     <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
                 </div>
                 <div class="buttons">
-                    <a href="#" data-role="button" data-inline="true">Add A Review</a>
+                    <a href="#pageAddReview" data-role="button" data-inline="true">Add A Review</a>
                     <a href="#pageGameList" data-role="button" data-inline="true">Back to Games</a>
                 </div>
                 <h3 class="ratingHeader">Overall Rating: 10/10</h3>
@@ -337,6 +337,99 @@ email:      grivas8325@conestogac.on.ca
                         <p>Date Posted: 02-01-2023</p>
                     </li>
                 </ul>
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
+<!----------------------------------Add A Review page---------------------------------------------->
+        <div id="pageAddReview" data-role="page" class="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Add a Review</h1>
+                <div data-role="navbar" data-iconpos="top" class="navigation" >
+                    <ul>
+                        <li>
+                            <a href="#pageHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="#pageSignUp">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#pageGameList" style="background-color: #82ADC9; color: #eeeeee">
+                                Games
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageAbout">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <div class="reviewListHeader">
+                    <h1 class="pageHead">Add a Review for Minecraft</h1>
+                    <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
+                </div>
+                <form class="reviewForm">
+                    <label>Title</label>
+                    <input type="text">
+                    <label>Comments</label>
+                    <textarea></textarea>
+                    <label>Rating</label>
+                    <input type="number">
+                    <button type="button">Add Review</button>
+                    <a href="#pageReviewsList" data-role="button">Back to Reviews List</a>
+                    <!--hide date; only used for db purposes-->
+                    <div class="hidden">
+                        <input type="date">
+                    </div>
+                </form>
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
+<!----------------------------------All Members Page----------------------------------------------->
+        <div id="pageAllMembers" data-role="page" class="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Members</h1>
+                <div data-role="navbar" data-iconpos="top" class="navigation" >
+                    <ul>
+                        <li>
+                            <a href="#pageHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="#pageSignUp" style="background-color: #82ADC9; color: #eeeeee">
+                                Sign Up
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageGameList">Games</a>
+                        </li>
+                        <li>
+                            <a href="#pageAbout">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <div class="reviewListHeader">
+                    <h1 class="pageHead">All Members</h1>
+                    <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
+                </div>
+                <ul data-role="listview" data-autodividers="true" data-inset="true">
+                    <li>Appla</li>
+                    <li>Banana</li>
+                    <li>Canela</li>
+                    <li>Danela</li>
+                </ul>
+                <a href="#pageSignUp" data-role="button">Back</a>
             </section>
 
             <footer data-role="footer" data-position="fixed" data-theme="a">
