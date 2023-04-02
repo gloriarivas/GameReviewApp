@@ -3,10 +3,10 @@ Mobile Web Development Final Project
 Gloria Rivas-Bonilla
 */
 
-/*home page*/
-#pageHome{
+.page{
     background-color: #82ADC9;
 }
+/*home page*/
 #mainHead{
     color: #eeeeee;
     font-size: 40px;
@@ -23,9 +23,7 @@ img{
 }
 
 /*sign up page*/
-#pageSignUp{
-    background-color: #82ADC9;
-}
+
 #frmSignUp label{
     color: #eeeeee;
 }
@@ -35,17 +33,13 @@ img{
 }
 
 /*game list page*/
-#pageGameList{
-    background-color: #82ADC9;
-}
+
 #gameHeader{
     color: #eeeeee;
 }
 
 /*about page*/
-#pageAbout{
-    background-color: #82ADC9;
-}
+
 #pageAbout section h1{
     color: #eeeeee;
     text-align: center;
@@ -58,9 +52,7 @@ img{
 }
 
 /*add new game page*/
-#pageAddNewGame{
-    background-color: #82ADC9;
-}
+
 #pageAddNewGame form{
     color: #eeeeee;
 }
@@ -80,4 +72,30 @@ img{
 }
 #pageAddNewGame button{
     margin-top: 15px;
+}
+
+/*review list page*/
+#pageReviewsList section a{
+    width: 35%;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+#pageReviewsList section h1{
+    text-align: center;
+    color: #eeeeee;
+}
+.ratingHeader{
+    color: #eeeeee;
+}
+.reviewListHeader{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-right: 15px;
 }

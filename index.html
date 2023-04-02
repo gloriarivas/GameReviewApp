@@ -32,7 +32,7 @@ email:      grivas8325@conestogac.on.ca
     <body>
 
 <!----------------------------------------Home Page------------------------------------------------>
-        <div id="pageHome" data-role="page">
+        <div id="pageHome" data-role="page" class="page">
             <header data-role="header" data-position="fixed" data-theme="a">
                 <h1>Home</h1>
             </header>
@@ -71,7 +71,7 @@ email:      grivas8325@conestogac.on.ca
         </div>
 
 <!---------------------------------------Sign up page---------------------------------------------->
-        <div id="pageSignUp" data-role="page">
+        <div id="pageSignUp" data-role="page" class="page">
             <header data-role="header" data-position="fixed" data-theme="a">
                 <h1>Sign Up</h1>
             <div data-role="navbar" data-iconpos="top" class="navigation" >
@@ -126,7 +126,7 @@ email:      grivas8325@conestogac.on.ca
 
 
 <!---------------------------------------Games page------------------------------------------------>
-        <div id="pageGameList" data-role="page">
+        <div id="pageGameList" data-role="page" class="page">
             <header data-role="header" data-position="fixed" data-theme="a">
                 <h1>Games</h1>
                 <div data-role="navbar" data-iconpos="top" class="navigation" >
@@ -160,7 +160,7 @@ email:      grivas8325@conestogac.on.ca
                         Publish date: November 18, 2011 <br>
                         Created by: Mojang <br>
                         Rating: 10/10 <br><!--Will make values change automatically-->
-                        <a href="#">Reviews: 5</a><br>
+                        <a href="#pageReviewsList">Reviews: 5</a><br>
                         <a href="#" id="btnReview" class="ui-btn ui-corner-all"
                            >Write a Review
                         </a>
@@ -177,7 +177,7 @@ email:      grivas8325@conestogac.on.ca
 
 
 <!---------------------------------------About page------------------------------------------------>
-        <div id="pageAbout" data-role="page">
+        <div id="pageAbout" data-role="page" class="page">
             <header data-role="header" data-position="fixed" data-theme="a">
                 <h1>About</h1>
                 <div data-role="navbar" data-iconpos="top" class="navigation" >
@@ -216,9 +216,9 @@ email:      grivas8325@conestogac.on.ca
         </div>
 
 <!---------------------------------------Add Game page--------------------------------------------->
-        <div id="pageAddNewGame" data-role="page">
+        <div id="pageAddNewGame" data-role="page" class="page">
             <header data-role="header" data-position="fixed" data-theme="a">
-                <h1>About</h1>
+                <h1>Add A Game</h1>
                 <div data-role="navbar" data-iconpos="top" class="navigation" >
                     <ul>
                         <li>
@@ -270,6 +270,73 @@ email:      grivas8325@conestogac.on.ca
                     <button type="button">Add Game</button>
                 </form>
                 <a href="#pageGameList" class="ui-btn ui-corner-all">Back to Games List</a>
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
+<!-------------------------------List of Reviews page---------------------------------------------->
+        <div id="pageReviewsList" data-role="page" class="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Reviews</h1>
+                <div data-role="navbar" data-iconpos="top" class="navigation" >
+                    <ul>
+                        <li>
+                            <a href="#pageHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="#pageSignUp">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#pageGameList" style="background-color: #82ADC9; color: #eeeeee">
+                                Games
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageAbout">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <div class="reviewListHeader">
+                    <h1>Reviews for Minecraft</h1>
+                    <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
+                </div>
+                <div class="buttons">
+                    <a href="#" data-role="button" data-inline="true">Add A Review</a>
+                    <a href="#pageGameList" data-role="button" data-inline="true">Back to Games</a>
+                </div>
+                <h3 class="ratingHeader">Overall Rating: 10/10</h3>
+                <ul data-role="listview" class="ui-listview-inset" data-icon="false">
+                    <li>
+                        <h3>TITLE</h3>
+                        <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
+                        <p>Rating: 10/10</p>
+                        <p>Date Posted: 02-01-2023</p>
+                    </li>
+                    <li>
+                        <h3>TITLE</h3>
+                        <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
+                        <p>Rating: 10/10</p>
+                        <p>Date Posted: 02-01-2023</p>
+                    </li>
+                    <li>
+                        <h3>TITLE</h3>
+                        <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
+                        <p>Rating: 10/10</p>
+                        <p>Date Posted: 02-01-2023</p>
+                    </li>
+                    <li>
+                        <h3>TITLE</h3>
+                        <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
+                        <p>Rating: 10/10</p>
+                        <p>Date Posted: 02-01-2023</p>
+                    </li>
+                </ul>
             </section>
 
             <footer data-role="footer" data-position="fixed" data-theme="a">
