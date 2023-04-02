@@ -1,3 +1,7 @@
+/*
+Mobile Web Development Final Project
+Gloria Rivas-Bonilla
+*/
 
 /*home page*/
 #pageHome{
@@ -36,4 +40,19 @@ img{
 }
 #gameHeader{
     color: #eeeeee;
+}
+
+/*about page*/
+#pageAbout{
+    background-color: #82ADC9;
+}
+#pageAbout section h1{
+    color: #eeeeee;
+    text-align: center;
+}
+#pageAbout h3{
+    color: #eeeeee;
+}
+#pageAbout img{
+    width: 300px;
 }
