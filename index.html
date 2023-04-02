@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>JQuery Mobile App Template</title>
+
+        <!--jQuery-->
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        <!--jQuery mobile-->
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <!--jQuery mobile style sheet-->
+        <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css">
+        <!--bootstrap style sheets-->
+        <!--<link rel="stylesheet" href="css/lib/bootstrap.css">-->
+        <!--<link rel="stylesheet" href="css/lib/bootstrap.rtl.css">-->
+        <!--<link rel="stylesheet" href="css/lib/bootstrap-grid.css">-->
+        <!--<link rel="stylesheet" href="css/lib/bootstrap-grid.rtl.css">-->
+        <!--<link rel="stylesheet" href="css/lib/bootstrap-reboot.css">-->
+        <!--<link rel="stylesheet" href="css/lib/bootstrap-reboot.rtl.css">-->
+        <!--<link rel="stylesheet" href="css/lib/bootstrap-utilities.css">-->
+        <!--<link rel="stylesheet" href="css/lib/bootstrap-utilities.rtl.css">-->
+        <!--bootstrap js files-->
+        <!--<script src="js/lib/bootstrap.bundle.js"></script>-->
+        <!--<script src="js/lib/bootstrap.esm.js"></script>-->
+        <!--<script src="js/lib/bootstrap.js"></script>-->
+
+        <!--our script-->
+        <script src="js/GRBdatabase.js"></script>
+        <script src="js/GRBDAL.js"></script>
+        <script src="js/GRBfacade.js"></script>
+        <script src="js/GRBglobal.js"></script>
+        <script src="js/GRButil.js"></script>
+
+        <!--our styles-->
+        <link rel="stylesheet" href="css/mystyle.css">
+
+
+    </head>
+    <body>
+
+<!----------------------------------------Home Page------------------------------------------------>
+        <div id="pageHome" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Home</h1>
+            </header>
+
+            <div data-role="navbar" data-iconpos="top" class="navigation" >
+                <ul>
+                    <li>
+                        <a href="#pageHome" style="background-color: #82ADC9; color: #eeeeee">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pageSignUp">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="#pageAddGame">Games</a>
+                    </li>
+                    <li>
+                        <a href="#pageAbout">About</a>
+                    </li>
+                </ul>
+            </div>
+
+            <section data-role="content">
+                <h1 id="mainHead">Welcome to Game Review!</h1>
+                <p id="mainContent">
+                    This app allows its users to view and create reviews for your
+                    favourite games! Don't see a game? Add it to our list!
+                </p>
+                <img src="img/Controller.png">
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
+<!---------------------------------------Sign up page---------------------------------------------->
+        <div id="pageSignUp" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Sign Up</h1>
+            <div data-role="navbar" data-iconpos="top" class="navigation" >
+                <ul>
+                    <li>
+                        <a href="#pageHome">Home</a>
+                    </li>
+                    <li>
+                        <a href="#pageSignUp" style="background-color: #82ADC9; color: #eeeeee">
+                            Sign Up
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pageAddGame">Games</a>
+                    </li>
+                    <li>
+                        <a href="#pageAbout">About</a>
+                    </li>
+                </ul>
+            </div>
+            </header>
+
+
+            <section data-role="content">
+                <h1>Sign Up To Our Website</h1>
+                <form id="frmSignUp" name="frmSignUp">
+
+                    <label for="txtFirstName">First Name:</label>
+                    <input type="text" id="txtFirstName" name="txtFirstName">
+                    <br>
+
+                    <label for="txtLastName">Last Name:</label>
+                    <input type="text" id="txtLastName" name="txtLastName">
+                    <br>
+
+                    <label for="txtEmail">Email:</label>
+                    <input type="text" id="txtEmail" name="txtEmail">
+
+
+
+                    <img src="img/CatWithForm.png">
+                    <button id="btnSignUp" name="btnSignUp">Sign Up</button>
+                    <button id="btnMembers" name="btnMembers">See All Members</button>
+                </form>
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
+
+
+<!---------------------------------------Games page------------------------------------------------>
+        <div id="pageAddGame" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Sign Up</h1>
+                <div data-role="navbar" data-iconpos="top" class="navigation" >
+                    <ul>
+                        <li>
+                            <a href="#pageHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="#pageSignUp">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#pageAddGame" style="background-color: #82ADC9; color: #eeeeee">
+                                Games
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageAbout">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+
+            <section data-role="content">
+                <h1 id="gameHeader">Here is a list of our games!</h1>
+                <!--change this to db stuff-->
+                <div data-role="collapsible" data-collapsed-icon="carat-d"
+                     data-expanded-icon="carat-u">
+                    <h1>Minecraft</h1>
+                    <p>
+                        Genre: Adventure <br>
+                        Publish date: November 18, 2011 <br>
+                        Created by: Mojang <br>
+                        <a href="#">Reviews: 5</a><br>
+                        <button type="button" id="btnReview" name="btnReview">
+                            Write a Review
+                        </button>
+                    </p>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-d"
+                     data-expanded-icon="carat-u">
+                    <h1>Minecraft</h1>
+                    <p>
+                        Genre: Adventure <br>
+                        Publish date: November 18, 2011 <br>
+                        Created by: Mojang <br>
+                        <a href="#">Reviews: 5</a><br>
+                        <button type="button" id="btnReview" name="btnReview">
+                            Write a Review
+                        </button>
+                    </p>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-d"
+                     data-expanded-icon="carat-u">
+                    <h1>Minecraft</h1>
+                    <p>
+                        Genre: Adventure <br>
+                        Publish date: November 18, 2011 <br>
+                        Created by: Mojang <br>
+                        <a href="#">Reviews: 5</a><br>
+                        <button type="button" id="btnReview" name="btnReview">
+                            Write a Review
+                        </button>
+                    </p>
+                </div>
+
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
+    </body>
+</html>
