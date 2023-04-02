@@ -48,7 +48,7 @@ email:      grivas8325@conestogac.on.ca
                         <a href="#pageSignUp">Sign Up</a>
                     </li>
                     <li>
-                        <a href="#pageAddGame">Games</a>
+                        <a href="#pageGameList">Games</a>
                     </li>
                     <li>
                         <a href="#pageAbout">About</a>
@@ -85,7 +85,7 @@ email:      grivas8325@conestogac.on.ca
                         </a>
                     </li>
                     <li>
-                        <a href="#pageAddGame">Games</a>
+                        <a href="#pageGameList">Games</a>
                     </li>
                     <li>
                         <a href="#pageAbout">About</a>
@@ -126,7 +126,7 @@ email:      grivas8325@conestogac.on.ca
 
 
 <!---------------------------------------Games page------------------------------------------------>
-        <div id="pageAddGame" data-role="page">
+        <div id="pageGameList" data-role="page">
             <header data-role="header" data-position="fixed" data-theme="a">
                 <h1>Games</h1>
                 <div data-role="navbar" data-iconpos="top" class="navigation" >
@@ -138,7 +138,7 @@ email:      grivas8325@conestogac.on.ca
                             <a href="#pageSignUp">Sign Up</a>
                         </li>
                         <li>
-                            <a href="#pageAddGame" style="background-color: #82ADC9; color: #eeeeee">
+                            <a href="#pageGameList" style="background-color: #82ADC9; color: #eeeeee">
                                 Games
                             </a>
                         </li>
@@ -159,38 +159,14 @@ email:      grivas8325@conestogac.on.ca
                         Genre: Adventure <br>
                         Publish date: November 18, 2011 <br>
                         Created by: Mojang <br>
+                        Rating: 10/10 <br><!--Will make values change automatically-->
                         <a href="#">Reviews: 5</a><br>
-                        <button type="button" id="btnReview" name="btnReview">
-                            Write a Review
-                        </button>
+                        <a href="#" id="btnReview" class="ui-btn ui-corner-all"
+                           >Write a Review
+                        </a>
                     </p>
                 </div>
-                <div data-role="collapsible" data-collapsed-icon="carat-d"
-                     data-expanded-icon="carat-u">
-                    <h1>Minecraft</h1>
-                    <p>
-                        Genre: Adventure <br>
-                        Publish date: November 18, 2011 <br>
-                        Created by: Mojang <br>
-                        <a href="#">Reviews: 5</a><br>
-                        <button type="button" id="btnReview" name="btnReview">
-                            Write a Review
-                        </button>
-                    </p>
-                </div>
-                <div data-role="collapsible" data-collapsed-icon="carat-d"
-                     data-expanded-icon="carat-u">
-                    <h1>Minecraft</h1>
-                    <p>
-                        Genre: Adventure <br>
-                        Publish date: November 18, 2011 <br>
-                        Created by: Mojang <br>
-                        <a href="#">Reviews: 5</a><br>
-                        <button type="button" id="btnReview" name="btnReview">
-                            Write a Review
-                        </button>
-                    </p>
-                </div>
+                <a href="#pageAddNewGame" class="ui-btn ui-corner-all">Add A New Game</a>
 
             </section>
 
@@ -213,7 +189,7 @@ email:      grivas8325@conestogac.on.ca
                             <a href="#pageSignUp">Sign Up</a>
                         </li>
                         <li>
-                            <a href="#pageAddGame">Games</a>
+                            <a href="#pageGameList">Games</a>
                         </li>
                         <li>
                             <a href="#pageAbout" style="background-color: #82ADC9; color: #eeeeee">
@@ -239,6 +215,67 @@ email:      grivas8325@conestogac.on.ca
             </footer>
         </div>
 
+<!---------------------------------------Add Game page--------------------------------------------->
+        <div id="pageAddNewGame" data-role="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>About</h1>
+                <div data-role="navbar" data-iconpos="top" class="navigation" >
+                    <ul>
+                        <li>
+                            <a href="#pageHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="#pageSignUp">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#pageGameList" style="background-color: #82ADC9; color: #eeeeee">
+                                Games</a>
+                        </li>
+                        <li>
+                            <a href="#pageAbout">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <div class="newGameHeader">
+                    <img src="img/joyconblue.png" class="left">
+                    <!--<a target="_blank" href="https://icons8.com/icon/FdGD2HZEsXHj/joy-con">Joy
+                    Con</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
+                    <h1>New Game</h1>
+                    <img src="img/joyconred.png" class="right">
+                </div>
+                <form>
+                    <label>Game Title</label>
+                    <input type="text">
+                    <label>Publish Date</label>
+                    <input type="date">
+                    <label>Genre</label>
+                    <select>
+                        <option>Select a Genre</option>
+                        <option>RPG</option>
+                        <option>Sandbox</option>
+                        <option>Action</option>
+                        <option>Adventure</option>
+                        <option>FPS</option>
+                        <option>Open World</option>
+                        <option>Platformer</option>
+                        <option>Fighting</option>
+                        <option>Survival Horror</option>
+                        <option>Racing</option>
+                    </select>
+                    <label>Company Name</label>
+                    <input type="text">
+                    <button type="button">Add Game</button>
+                </form>
+                <a href="#pageGameList" class="ui-btn ui-corner-all">Back to Games List</a>
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
 
     </body>
 </html>

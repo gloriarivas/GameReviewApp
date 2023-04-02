@@ -35,7 +35,7 @@ img{
 }
 
 /*game list page*/
-#pageAddGame{
+#pageGameList{
     background-color: #82ADC9;
 }
 #gameHeader{
@@ -55,4 +55,29 @@ img{
 }
 #pageAbout img{
     width: 300px;
+}
+
+/*add new game page*/
+#pageAddNewGame{
+    background-color: #82ADC9;
+}
+#pageAddNewGame form{
+    color: #eeeeee;
+}
+#pageAddNewGame section h1{
+    color: #eeeeee;
+    text-align: center;
+}
+.newGameHeader{
+    display: flex;
+    align-items: center;
+}
+.left{
+    margin-left: 10px;
+}
+.right{
+    margin-right: 10px;
+}
+#pageAddNewGame button{
+    margin-top: 15px;
 }
