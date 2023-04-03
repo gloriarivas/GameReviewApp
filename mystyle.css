@@ -24,12 +24,28 @@ img{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 200px;
 }
 
 /*sign up page*/
 
 #frmSignUp label{
     color: #eeeeee;
+}
+#frmSignUp img{
+    width: 80px;
+}
+.signUpImage{
+    display: flex;
+    align-items: center;
+
+}
+.signUpButtons{
+    display: inline;
+    align-items: center;
+}
+.flipped{
+    transform: scaleX(-1);
 }
 
 /*game list page*/
@@ -99,4 +115,24 @@ img{
 }
 .reviewForm button{
     margin-top: 10px;
+}
+
+/*Validation style*/
+label.error{
+    color: #FF2F48;
+    font-weight: bold;
+}
+input.error,
+select.error,
+textarea.error {
+    border: 1px red solid;
+}
+#txtFirstName-error.error{
+    color: #FF2F48;
+}
+#txtLastName-error.error{
+    color: #FF2F48;
+}
+#txtEmail-error.error{
+    color: #FF2F48;
 }

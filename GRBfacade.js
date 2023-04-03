@@ -61,3 +61,22 @@ function addGame(){
         console.log("Add game is NOT valid");
     }
 }
+
+//reset text values to empty
+function resetSignUpValues(){
+    $("#txtFirstName").val("");
+    $("#txtLastName").val("");
+    $("#txtEmail").val("");
+}
+
+function resetNewGameValues(){
+    $("#txtGameTitle").val("");
+    $("#dtPublishDate").val("");
+    $("#txtCompany").val("");
+}
+
+function resetAddReviewValues(){
+    $("#txtReviewTitle").val("");
+    $("#txtReviewComments").val("");
+    $("#txtReviewRating").val("");
+}

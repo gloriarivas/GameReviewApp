@@ -17,6 +17,8 @@ email:      grivas8325@conestogac.on.ca
         <!--jQuery mobile style sheet-->
         <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css">
 
+        <!--validations-->
+        <script src="js/lib/jquery.validate.js"></script>
         <!--our script-->
         <script src="js/GRBdatabase.js"></script>
         <script src="js/GRBDAL.js"></script>
@@ -111,10 +113,14 @@ email:      grivas8325@conestogac.on.ca
                     <input type="text" id="txtEmail" name="txtEmail">
 
 
-
-                    <img src="img/CatWithForm.png">
-                    <button id="btnSignUp" name="btnSignUp">Sign Up</button>
-                    <a href="#pageAllMembers" data-role="button">See All Members</a>
+                    <div class="signUpImage">
+                        <img src="img/CatWithForm.png" class="flipped">
+                        <div class="signUpButtons">
+                            <button type="button" id="btnSignUp" name="btnSignUp">Sign Up</button>
+                            <a href="#pageAllMembers" data-role="button">See All Members</a>
+                        </div>
+                        <img src="img/CatWithForm.png">
+                    </div>
                 </form>
             </section>
 
@@ -246,28 +252,31 @@ email:      grivas8325@conestogac.on.ca
                     <h1 class="pageHead">New Game</h1>
                     <img src="img/joyconred.png" class="right">
                 </div>
-                <form>
-                    <label>Game Title</label>
-                    <input type="text">
-                    <label>Publish Date</label>
-                    <input type="date">
-                    <label>Genre</label>
-                    <select>
-                        <option>Select a Genre</option>
-                        <option>RPG</option>
-                        <option>Sandbox</option>
-                        <option>Action</option>
-                        <option>Adventure</option>
-                        <option>FPS</option>
-                        <option>Open World</option>
-                        <option>Platformer</option>
-                        <option>Fighting</option>
-                        <option>Survival Horror</option>
-                        <option>Racing</option>
+                <form id="frmAddGame" name="frmAddGame">
+                    <label for="txtGameTitle">Game Title</label>
+                    <input type="text" id="txtGameTitle" name="txtGameTitle">
+
+                    <label for="dtPublishDate">Publish Date</label>
+                    <input type="date" id="dtPublishDate" name="dtPublishDate">
+
+                    <label for="cmbGenre">Genre</label>
+                    <select id="cmbGenre" name="cmbGenre">
+                        <option value="RPG">RPG</option>
+                        <option value="Sandbox">Sandbox</option>
+                        <option value="Action">Action</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="FPS">FPS</option>
+                        <option value="Open World">Open World</option>
+                        <option value="Platformer">Platformer</option>
+                        <option value="Fighting">Fighting</option>
+                        <option value="Survival Horror">Survival Horror</option>
+                        <option value="Racing">Racing</option>
                     </select>
-                    <label>Company Name</label>
-                    <input type="text">
-                    <button type="button">Add Game</button>
+
+                    <label for="txtCompany">Company Name</label>
+                    <input type="text" id="txtCompany" name="txtCompany">
+
+                    <button type="button" id="btnAddGame" name="btnAddGame">Add Game</button>
                 </form>
                 <a href="#pageGameList" class="ui-btn ui-corner-all">Back to Games List</a>
             </section>
@@ -373,14 +382,17 @@ email:      grivas8325@conestogac.on.ca
                     <h1 class="pageHead">Add a Review for Minecraft</h1>
                     <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
                 </div>
-                <form class="reviewForm">
-                    <label>Title</label>
-                    <input type="text">
-                    <label>Comments</label>
-                    <textarea></textarea>
-                    <label>Rating</label>
-                    <input type="number">
-                    <button type="button">Add Review</button>
+                <form class="reviewForm" id="frmAddReview" name="frmAddReview">
+
+                    <label for="txtReviewTitle">Title</label>
+                    <input type="text" id="txtReviewTitle" name="txtReviewTitle">
+
+                    <label for="txtReviewComments">Comments</label>
+                    <textarea id="txtReviewComments" name="txtReviewComments"></textarea>
+                    <label for="txtReviewRating">Rating</label>
+                    <input type="number" id="txtReviewRating" name="txtReviewRating" min="0"
+                           max="10">
+                    <button type="button" id="btnAddReview" name="btnAddReview">Add Review</button>
                     <a href="#pageReviewsList" data-role="button">Back to Reviews List</a>
                     <!--hide date; only used for db purposes-->
                     <div class="hidden">
