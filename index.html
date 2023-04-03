@@ -99,7 +99,7 @@ email:      grivas8325@conestogac.on.ca
 
             <section data-role="content">
                 <h1 class="pageHead">Sign Up To Our Website</h1>
-                <form id="frmSignUp" name="frmSignUp">
+                <form id="frmSignUp" name="frmSignUp" class="formsLayout">
 
                     <label for="txtFirstName">First Name:</label>
                     <input type="text" id="txtFirstName" name="txtFirstName">
@@ -167,8 +167,39 @@ email:      grivas8325@conestogac.on.ca
                         Created by: Mojang <br>
                         Rating: 10/10 <br><!--Will make values change automatically-->
                         <a href="#pageReviewsList">Reviews: 5</a><br>
-                        <a href="#pageAddReview" id="btnReview" class="ui-btn ui-corner-all"
-                           >Write a Review
+                        <a href="#">Edit Game Info</a>
+                        <a href="#pageAddReview" class="ui-btn ui-corner-all">
+                            Write a Review
+                        </a>
+                    </p>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-d"
+                     data-expanded-icon="carat-u">
+                    <h1>Minecraft</h1>
+                    <p>
+                        Genre: Adventure <br>
+                        Publish date: November 18, 2011 <br>
+                        Created by: Mojang <br>
+                        Rating: 10/10 <br><!--Will make values change automatically-->
+                        <a href="#pageReviewsList">Reviews: 5</a><br>
+                        <a href="#">Edit Game Info</a>
+                        <a href="#pageAddReview" class="ui-btn ui-corner-all">
+                            Write a Review
+                        </a>
+                    </p>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-d"
+                     data-expanded-icon="carat-u">
+                    <h1>Minecraft</h1>
+                    <p>
+                        Genre: Adventure <br>
+                        Publish date: November 18, 2011 <br>
+                        Created by: Mojang <br>
+                        Rating: 10/10 <br><!--Will make values change automatically-->
+                        <a href="#pageReviewsList">Reviews: 5</a><br>
+                        <a href="#pageModifyGame">Edit Game Info</a>
+                        <a href="#pageAddReview" class="ui-btn ui-corner-all">
+                            Write a Review
                         </a>
                     </p>
                 </div>
@@ -252,7 +283,7 @@ email:      grivas8325@conestogac.on.ca
                     <h1 class="pageHead">New Game</h1>
                     <img src="img/joyconred.png" class="right">
                 </div>
-                <form id="frmAddGame" name="frmAddGame">
+                <form id="frmAddGame" name="frmAddGame" class="formsLayout">
                     <label for="txtGameTitle">Game Title</label>
                     <input type="text" id="txtGameTitle" name="txtGameTitle">
 
@@ -320,30 +351,39 @@ email:      grivas8325@conestogac.on.ca
                     <a href="#pageGameList" data-role="button" data-inline="true">Back to Games</a>
                 </div>
                 <h3 class="ratingHeader">Overall Rating: 10/10</h3>
-                <ul data-role="listview" class="ui-listview-inset" data-icon="false">
+                <ul data-role="listview" data-inset="true" class="ui-listview-inset"
+                    data-icon="false">
                     <li>
-                        <h3>TITLE</h3>
-                        <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
-                        <p>Rating: 10/10</p>
-                        <p>Date Posted: 02-01-2023</p>
+                        <a href="#pageReviewDetail" style="width: 90%;">
+                            <h3>TITLE</h3>
+                            <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
+                            <p>Rating: 10/10</p>
+                            <p>Date Posted: 02-01-2023</p>
+                        </a>
                     </li>
                     <li>
-                        <h3>TITLE</h3>
-                        <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
-                        <p>Rating: 10/10</p>
-                        <p>Date Posted: 02-01-2023</p>
+                        <a href="#pageReviewDetail" style="width: 90%">
+                            <h3>TITLE</h3>
+                            <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
+                            <p>Rating: 10/10</p>
+                            <p>Date Posted: 02-01-2023</p>
+                        </a>
                     </li>
                     <li>
-                        <h3>TITLE</h3>
-                        <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
-                        <p>Rating: 10/10</p>
-                        <p>Date Posted: 02-01-2023</p>
+                        <a href="#pageReviewDetail" style="width: 90%">
+                            <h3>TITLE</h3>
+                            <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
+                            <p>Rating: 10/10</p>
+                            <p>Date Posted: 02-01-2023</p>
+                        </a>
                     </li>
                     <li>
-                        <h3>TITLE</h3>
-                        <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
-                        <p>Rating: 10/10</p>
-                        <p>Date Posted: 02-01-2023</p>
+                        <a href="#pageReviewDetail" style="width: 90%">
+                            <h3>TITLE</h3>
+                            <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
+                            <p>Rating: 10/10</p>
+                            <p>Date Posted: 02-01-2023</p>
+                        </a>
                     </li>
                 </ul>
             </section>
@@ -382,7 +422,7 @@ email:      grivas8325@conestogac.on.ca
                     <h1 class="pageHead">Add a Review for Minecraft</h1>
                     <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
                 </div>
-                <form class="reviewForm" id="frmAddReview" name="frmAddReview">
+                <form class="formsLayout" id="frmAddReview" name="frmAddReview">
 
                     <label for="txtReviewTitle">Title</label>
                     <input type="text" id="txtReviewTitle" name="txtReviewTitle">
@@ -436,10 +476,11 @@ email:      grivas8325@conestogac.on.ca
                     <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
                 </div>
                 <ul data-role="listview" data-autodividers="true" data-inset="true">
-                    <li>Appla</li>
-                    <li>Banana</li>
-                    <li>Canela</li>
-                    <li>Danela</li>
+                    <li><a href="#pageModifyMember">Appla</a></li>
+                    <li><a href="#pageModifyMember">Azula</a></li>
+                    <li><a href="#pageModifyMember">Bumi</a></li>
+                    <li><a href="#pageModifyMember">Bongo</a></li>
+                    <li><a href="#pageModifyMember">Zuko</a></li>
                 </ul>
                 <a href="#pageSignUp" data-role="button">Back</a>
             </section>
@@ -448,6 +489,245 @@ email:      grivas8325@conestogac.on.ca
                 <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
             </footer>
         </div>
+
+<!-------------------------------Modify/Delete Member Page----------------------------------------->
+        <div id="pageModifyMember" data-role="page" class="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Modify Member</h1>
+                <div data-role="navbar" data-iconpos="top" class="navigation" >
+                    <ul>
+                        <li>
+                            <a href="#pageHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="#pageSignUp" style="background-color: #82ADC9; color: #eeeeee">
+                                Sign Up
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageGameList">Games</a>
+                        </li>
+                        <li>
+                            <a href="#pageAbout">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <div class="reviewListHeader">
+                    <h1 class="pageHead">"Member Name"</h1>
+                </div>
+                <form id="frmModifyMember" name="frmSignUp" class="formsLayout">
+
+                    <label for="txtFirstName">First Name:</label>
+                    <input type="text" id="txtModifyFirstName" name="txtFirstName">
+                    <br>
+
+                    <label for="txtLastName">Last Name:</label>
+                    <input type="text" id="txtModifyLastName" name="txtLastName">
+                    <br>
+
+                    <label for="txtEmail">Email:</label>
+                    <input type="text" id="txtModifyEmail" name="txtEmail">
+
+
+                    <div class="signUpImage">
+                        <img src="img/CatWithForm.png" class="flipped">
+                        <div class="signUpButtons">
+                            <button type="button" id="btnModifyMember" name="btnModifyMember">
+                                Update Member
+                            </button>
+                            <button type="button" id="btnDeleteMember" name="btnDeleteMember">
+                                Delete Member
+                            </button>
+                            <a href="#pageAllMembers" data-role="button">Cancel</a>
+                        </div>
+
+                    </div>
+                </form>
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
+<!------------------------------------Modify Game page--------------------------------------------->
+        <div id="pageModifyGame" data-role="page" class="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Edit GameName</h1>
+                <div data-role="navbar" data-iconpos="top" class="navigation" >
+                    <ul>
+                        <li>
+                            <a href="#pageHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="#pageSignUp">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#pageGameList" style="background-color: #82ADC9; color: #eeeeee">
+                                Games</a>
+                        </li>
+                        <li>
+                            <a href="#pageAbout">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <div class="newGameHeader">
+                    <img src="img/joyconblue.png" class="left">
+                    <!--<a target="_blank" href="https://icons8.com/icon/FdGD2HZEsXHj/joy-con">Joy
+                    Con</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
+                    <h1 class="pageHead">GameName</h1>
+                    <img src="img/joyconred.png" class="right">
+                </div>
+                <form id="frmAddModifyGame" name="frmModifyAddGame" class="formsLayout">
+                    <label for="txtGameTitle">Game Title</label>
+                    <input type="text" id="txtModifyGameTitle" name="txtModifyGameTitle">
+
+                    <label for="dtPublishDate">Publish Date</label>
+                    <input type="date" id="dtModifyPublishDate" name="dtModifyPublishDate">
+
+                    <label for="cmbModifyGenre">Genre</label>
+                    <select id="cmbModifyGenre" name="cmbModifyGenre">
+                        <option value="RPG">RPG</option>
+                        <option value="Sandbox">Sandbox</option>
+                        <option value="Action">Action</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="FPS">FPS</option>
+                        <option value="Open World">Open World</option>
+                        <option value="Platformer">Platformer</option>
+                        <option value="Fighting">Fighting</option>
+                        <option value="Survival Horror">Survival Horror</option>
+                        <option value="Racing">Racing</option>
+                    </select>
+
+                    <label for="txtModifyCompany">Company Name</label>
+                    <input type="text" id="txtModifyCompany" name="txtModifyCompany">
+                    <div class="buttons">
+                        <button type="button" id="btnModifyGame" name="btnModifyGame"
+                                style="width: 90px;" >Update
+                        </button>
+                        <button type="button" id="btnDeleteGame" name="btnDeleteGame"
+                                style="width: 90px;" >Delete
+                        </button>
+                        <a href="#pageGameList" data-role="button">Cancel</a>
+                    </div>
+                </form>
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
+<!----------------------------------Review Details page-------------------------------------------->
+        <div id="pageReviewDetail" data-role="page" class="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Review Details</h1>
+                <div data-role="navbar" data-iconpos="top" class="navigation" >
+                    <ul>
+                        <li>
+                            <a href="#pageHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="#pageSignUp">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#pageGameList" style="background-color: #82ADC9; color: #eeeeee">
+                                Games
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageAbout">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <div class="reviewListHeader">
+                    <h1 class="pageHead">Details</h1>
+                    <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
+                </div>
+                <a href="#pageReviewsList">Back</a>
+                <div class="formsLayout">
+                    <h1>TITLE</h1>
+                    <p>Date Posted: 02-01-2023</p>
+                    <p>Rating: 10/10</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias asperiores aspernatur autem delectus dignissimos distinctio ducimus earum eos, eveniet ex fuga, fugit inventore ipsum iste magni nam natus non nulla odit officiis, praesentium repellat sunt vel vitae voluptatem voluptatum.</p>
+                    <a href="#pageModifyReview" data-role="button">Edit</a>
+                    <button type="button">Delete</button>
+                </div>
+
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
+<!----------------------------------Add A Review page---------------------------------------------->
+        <div id="pageModifyReview" data-role="page" class="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Edit a Review</h1>
+                <div data-role="navbar" data-iconpos="top" class="navigation" >
+                    <ul>
+                        <li>
+                            <a href="#pageHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="#pageSignUp">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#pageGameList" style="background-color: #82ADC9; color: #eeeeee">
+                                Games
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageAbout">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <div class="reviewListHeader">
+                    <h1 class="pageHead">Edit a Review for Minecraft</h1>
+                    <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
+                </div>
+                <form class="formsLayout" id="frmModifyReview" name="frmModifyReview">
+
+                    <label for="txtModifyReviewTitle">Title</label>
+                    <input type="text" id="txtModifyReviewTitle" name="txtModifyReviewTitle">
+
+                    <label for="txtModifyReviewComments">Comments</label>
+                    <textarea id="txtModifyReviewComments"
+                              name="txtModifyReviewComments"></textarea>
+
+                    <label for="txtModifyReviewRating">Rating</label>
+                    <input type="number" id="txtModifyReviewRating" name="txtModifyReviewRating"
+                           min="0"
+                           max="10">
+                    <button type="button" id="btnModifyReview" name="btnModifyReview">
+                        Update
+                    </button>
+                    <a href="#pageReviewsList" data-role="button">Cancel</a>
+                    <!--hide date; only used for db purposes-->
+                    <div class="hidden">
+                        <input type="date">
+                    </div>
+                </form>
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
 
     </body>
 </html>

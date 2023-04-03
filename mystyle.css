@@ -28,17 +28,15 @@ img{
 }
 
 /*sign up page*/
-
-#frmSignUp label{
-    color: #eeeeee;
-}
 #frmSignUp img{
-    width: 80px;
+    width: 70px;
+}
+#frmSignUp label{
+    margin-top: auto;
 }
 .signUpImage{
     display: flex;
     align-items: center;
-
 }
 .signUpButtons{
     display: inline;
@@ -49,7 +47,6 @@ img{
 }
 
 /*game list page*/
-
 #gameHeader{
     color: #eeeeee;
 }
@@ -63,19 +60,17 @@ img{
 }
 
 /*add new game page*/
-
-#pageAddNewGame form{
-    color: #eeeeee;
-}
 .newGameHeader{
     display: flex;
     align-items: center;
 }
 .left{
     margin-left: 10px;
+    width: 70px;
 }
 .right{
     margin-right: 10px;
+    width: 70px;
 }
 #pageAddNewGame button{
     margin-top: 15px;
@@ -107,15 +102,21 @@ img{
 .hidden{
     display: none;
 }
-.reviewForm{
+.formsLayout{
     background-color: #eeeeee;
-    padding: 25px;
+    padding: 15px;
     border-radius: 8px;
-    margin-top: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #1b1b1b;
 }
-.reviewForm button{
+.formsLayout button{
     margin-top: 10px;
 }
+.formsLayout label{
+    margin-top: 15px;
+}
+
 
 /*Validation style*/
 label.error{
