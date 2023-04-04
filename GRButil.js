@@ -11,26 +11,32 @@ function doValidation_frmSignUp(){
     form.validate({
         rules:{
             txtFirstName:{
-                required: true
+                required: true,
+                maxlength: 25
             },
             txtLastName:{
-                required: true
+                required: true,
+                maxlength: 25
             },
             txtEmail:{
                 required: true,
-                checkEmail: true
+                checkEmail: true,
+                maxlength: 40
             }
         },
         messages:{
             txtFirstName:{
-                required: "First name is required"
+                required: "First name is required",
+                maxlength: "Max characters is 25"
             },
             txtLastName:{
-                required: "Last name is required"
+                required: "Last name is required",
+                maxlength: "Max characters is 25"
             },
             txtEmail:{
                 required: "Email is required",
-                checkEmail: "Email is not valid"
+                checkEmail: "Email is not valid",
+                maxlength: "Max characters is 40"
             }
         }
     });
@@ -43,7 +49,8 @@ function doValidation_frmAddReview(){
     form.validate({
         rules:{
             txtReviewTitle:{
-                required: true
+                required: true,
+                maxlength: 30
             },
             txtReviewComments:{
                 required: true,
@@ -57,7 +64,8 @@ function doValidation_frmAddReview(){
         },
         messages:{
             txtReviewTitle:{
-                required: "Review must have a title"
+                required: "Review must have a title",
+                maxlength: "Max characters for title is 30"
             },
             txtReviewComments:{
                 required: "Review needs to have comments",
@@ -78,7 +86,8 @@ function doValidation_frmAddGame(){
     form.validate({
         rules:{
             txtGameTitle:{
-                required: true
+                required: true,
+                maxlength: 25 //db max is 25, so 25 as to not give the db any errors
             },
             dtPublishDate:{
                 required: true,
@@ -90,7 +99,8 @@ function doValidation_frmAddGame(){
         },
         messages:{
             txtGameTitle:{
-                required: "Game Title is required"
+                required: "Game Title is required",
+                maxlength: "Max allowed characters is 25"
             },
             dtPublishDate:{
                 required:"Publish Date is required"

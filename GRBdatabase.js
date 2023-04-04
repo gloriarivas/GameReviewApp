@@ -29,13 +29,12 @@ var DB = {
     },
     //create tables
     createTables: function(){
-        //games, genre, reviews, users
         //load tables without foreign keys first
 
         //Genre
         function createGenreTable(tx){
             var sql = "CREATE TABLE IF NOT EXISTS genre(" +
-                "genre_id INT NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                "genre_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "genre_name VARCHAR(20));";
             let options = [];
 
@@ -48,7 +47,7 @@ var DB = {
         //Users
         function createUsersTable(tx){
             var sql = "CREATE TABLE IF NOT EXISTS users(" +
-                "user_id INT NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                "user_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "user_first_name VARCHAR(25)," +
                 "user_last_name VARCHAR(25)," +
                 "user_email VARCHAR(40));";
@@ -63,10 +62,10 @@ var DB = {
         //Games
         function createGamesTable(tx){
             var sql = "CREATE TABLE IF NOT EXISTS games(" +
-                "game_id INT NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                "game_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "game_name VARCHAR(25)," +
                 "publish_date DATE," +
-                "genre_id INT," +
+                "genre_id INTEGER," +
                 "company_name VARCHAR(50)," +
                 "FOREIGN KEY(genre_id) REFERENCES genre(genre_id));";
             let options = [];
@@ -79,13 +78,13 @@ var DB = {
 
         //Reviews
         function createReviewsTable(tx){
-            var sql = "CREATE TABLE IS NOT EXISTS reviews(" +
-                "review_id INT NOT NULL PRIMARY KEY AUTOINCREMENT," +
-                "game_id INT," +
+            var sql = "CREATE TABLE IF NOT EXISTS reviews(" +
+                "review_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                "game_id INTEGER NOT NULL," +
                 "title VARCHAR(30)," +
                 "comment TEXT," +
-                "rating INT," +
-                "date_posted DATETIME," +
+                "rating INTEGER," +
+                "date_posted DATE," +
                 "FOREIGN KEY(game_id) REFERENCES games(game_id));";
             let options = [];
 
@@ -93,6 +92,54 @@ var DB = {
                 console.log("Reviews Table created");
             }
             tx.executeSql(sql, options, success, errorHandler);
+        }
+
+        //success transaction
+        function successTransaction(){
+            console.log("Create table transaction successful");
+        }
+
+        db.transaction(createGenreTable, errorHandler, successTransaction);
+        db.transaction(createUsersTable, errorHandler, successTransaction);
+        db.transaction(createGamesTable, errorHandler, successTransaction);
+        db.transaction(createReviewsTable, errorHandler, successTransaction);
+    },
+    dropTables:function(){
+        //genre table
+        function dropGenreTable(tx){
+            let sql = "DROP TABLE IF EXISTS genre;";
+            let options = [];
+            function successDrop(){
+                console.log("Success: genre table dropped");
+            }
+            tx.executeSql(sql, options, successDrop, errorHandler);
+        }
+
+        function dropUsersTable(tx){
+            let sql = "DROP TABLE IF EXISTS users;";
+            let options = [];
+            function successDrop(){
+                console.log("Success: users table dropped");
+            }
+            tx.executeSql(sql, options, successDrop, errorHandler);
+        }
+
+        function dropGamesTable(tx){
+            let sql = "DROP TABLE IF EXISTS games;";
+            let options = [];
+            function successDrop(){
+                console.log("Success: games table dropped");
+            }
+            tx.executeSql(sql, options, successDrop, errorHandler);
+        }
+
+        function dropReviewsTable(tx){
+            let sql = "DROP TABLE IF EXISTS reviews;";
+            let options = [];
+            function successDrop(){
+                console.log("Success: reviews table dropped");
+            }
+            tx.executeSql(sql, options, successDrop, errorHandler);
         }
     }
 }

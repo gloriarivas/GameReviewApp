@@ -34,7 +34,7 @@ function addReview_pageshow() {
     resetAddReviewValues();
 }
 
-//ready function
+
 function init(){
     $("#btnSignUp").on("click", btnSignUp_click);
     $("#btnAddReview").on("click", btnAddReview_click);
@@ -45,8 +45,23 @@ function init(){
     $("#pageAddReview").on("pageshow", addReview_pageshow);
 }
 
+// initializing db
+function initDB(){
+    try{
+        DB.createDatabase();
+        DB.dropTables();
+
+        if (db){
+            DB.createTables();
+        }
+    }catch (e){
+        console.error("Failure in db creation");
+    }
+}
 
 //ready event
 $(document).ready(function () {
     init();
+    initDB();
 });
+
