@@ -87,7 +87,7 @@ function doValidation_frmAddGame(){
         rules:{
             txtGameTitle:{
                 required: true,
-                maxlength: 25 //db max is 25, so 25 as to not give the db any errors
+                maxlength: 100 //db max is 100, so 100 as to not give the db any errors
             },
             dtPublishDate:{
                 required: true,

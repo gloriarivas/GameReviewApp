@@ -53,6 +53,10 @@ function initDB(){
 
         if (db){
             DB.createTables();
+            DB.inputData();
+        }
+        else{
+            console.error("Error creating tables");
         }
     }catch (e){
         console.error("Failure in db creation");
