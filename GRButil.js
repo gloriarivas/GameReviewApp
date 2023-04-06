@@ -43,6 +43,43 @@ function doValidation_frmSignUp(){
     return form.valid();
 }
 
+function doValidation_frmModifyMember(){
+    let form = $("#frmModifyMember");
+    form.validate({
+        rules:{
+            txtModifyFirstName:{
+                required: true,
+                maxlength: 25
+            },
+            txtModifyLastName:{
+                required: true,
+                maxlength: 25
+            },
+            txtModifyEmail:{
+                required: true,
+                checkEmail: true,
+                maxlength: 40
+            }
+        },
+        messages:{
+            txtModifyFirstName:{
+                required: "First name is required",
+                maxlength: "Max characters is 25"
+            },
+            txtModifyLastName:{
+                required: "Last name is required",
+                maxlength: "Max characters is 25"
+            },
+            txtModifyEmail:{
+                required: "Email is required",
+                checkEmail: "Email is not valid",
+                maxlength: "Max characters is 40"
+            }
+        }
+    });
+    return form.valid();
+}
+
 //Validations for Add Review
 function doValidation_frmAddReview(){
     let form = $("#frmAddReview");

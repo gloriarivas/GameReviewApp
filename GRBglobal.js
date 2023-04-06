@@ -35,14 +35,37 @@ function addReview_pageshow() {
 }
 
 
+function showAllMembers_pageshow() {
+    getAllUsers();
+}
+
+function showMember_pageshow() {
+    showCurrentUser();
+}
+
+function btnModifyMember_click() {
+    modifyMember();
+}
+
+function btnDeleteMember_click() {
+    deleteCurrentUser();
+}
+
 function init(){
+    //forms
     $("#btnSignUp").on("click", btnSignUp_click);
+    $("#btnModifyMember").on("click", btnModifyMember_click);
+    $("#btnDeleteMember").on("click", btnDeleteMember_click);
+
     $("#btnAddReview").on("click", btnAddReview_click);
     $("#btnAddGame").on("click", btnAddGame_click);
     // refresh page forms on pageshow
     $("#pageSignUp").on("pageshow", signUp_pageshow);
     $("#pageAddNewGame").on("pageshow", addNewGame_pageshow);
     $("#pageAddReview").on("pageshow", addReview_pageshow);
+
+    $("#pageAllMembers").on("pageshow", showAllMembers_pageshow);
+    $("#pageModifyMember").on("pageshow", showMember_pageshow);
 }
 
 // initializing db

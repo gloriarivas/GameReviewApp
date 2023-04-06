@@ -475,12 +475,12 @@ email:      grivas8325@conestogac.on.ca
                     <h1 class="pageHead">All Members</h1>
                     <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
                 </div>
-                <ul data-role="listview" data-autodividers="true" data-inset="true">
-                    <li><a href="#pageModifyMember">Appla</a></li>
-                    <li><a href="#pageModifyMember">Azula</a></li>
-                    <li><a href="#pageModifyMember">Bumi</a></li>
-                    <li><a href="#pageModifyMember">Bongo</a></li>
-                    <li><a href="#pageModifyMember">Zuko</a></li>
+                <ul data-role="listview" data-autodividers="true" data-inset="true" id="lstUsers">
+                    <!--<li><a href="#pageModifyMember">Appla</a></li>-->
+                    <!--<li><a href="#pageModifyMember">Azula</a></li>-->
+                    <!--<li><a href="#pageModifyMember">Bumi</a></li>-->
+                    <!--<li><a href="#pageModifyMember">Bongo</a></li>-->
+                    <!--<li><a href="#pageModifyMember">Zuko</a></li>-->
                 </ul>
                 <a href="#pageSignUp" data-role="button">Back</a>
             </section>
@@ -493,7 +493,7 @@ email:      grivas8325@conestogac.on.ca
 <!-------------------------------Modify/Delete Member Page----------------------------------------->
         <div id="pageModifyMember" data-role="page" class="page">
             <header data-role="header" data-position="fixed" data-theme="a">
-                <h1>Modify Member</h1>
+                <h1>Edit a Member</h1>
                 <div data-role="navbar" data-iconpos="top" class="navigation" >
                     <ul>
                         <li>
@@ -516,20 +516,20 @@ email:      grivas8325@conestogac.on.ca
 
             <section data-role="content">
                 <div class="reviewListHeader">
-                    <h1 class="pageHead">"Member Name"</h1>
+                    <h1 class="pageHead" id="headModifyUser">"Member Name"</h1>
                 </div>
-                <form id="frmModifyMember" name="frmSignUp" class="formsLayout">
+                <form id="frmModifyMember" name="frmModifyMember" class="formsLayout">
 
-                    <label for="txtFirstName">First Name:</label>
-                    <input type="text" id="txtModifyFirstName" name="txtFirstName">
+                    <label for="txtModifyFirstName">First Name:</label>
+                    <input type="text" id="txtModifyFirstName" name="txtModifyFirstName">
                     <br>
 
-                    <label for="txtLastName">Last Name:</label>
-                    <input type="text" id="txtModifyLastName" name="txtLastName">
+                    <label for="txtModifyLastName">Last Name:</label>
+                    <input type="text" id="txtModifyLastName" name="txtModifyLastName">
                     <br>
 
-                    <label for="txtEmail">Email:</label>
-                    <input type="text" id="txtModifyEmail" name="txtEmail">
+                    <label for="txtModifyEmail">Email:</label>
+                    <input type="text" id="txtModifyEmail" name="txtModifyEmail">
 
 
                     <div class="signUpImage">

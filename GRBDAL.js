@@ -19,7 +19,7 @@ var Users={
     },
     select: function(options, callback){
         function selectUser(tx){
-            let sql = "SELECT * FROM users WHERE id=?;";
+            let sql = "SELECT * FROM users WHERE user_id=?;";
             tx.executeSql(sql,options,callback,errorHandler);
         }
         function successTransaction(){
@@ -73,7 +73,7 @@ var Games={
     },
     select: function(options, callback){
         function selectGame(tx){
-            let sql = "SELECT * FROM games WHERE id=?;";
+            let sql = "SELECT * FROM games WHERE game_id=?;";
             tx.executeSql(sql,options,callback,errorHandler);
         }
         function successTransaction(){
@@ -126,7 +126,7 @@ var Reviews={
     },
     select: function(options, callback){
         function selectReview(tx){
-            let sql = "SELECT * FROM reviews WHERE id=?;";
+            let sql = "SELECT * FROM reviews WHERE review_id=?;";
             tx.executeSql(sql,options,callback,errorHandler);
         }
         function successTransaction(){
@@ -146,7 +146,7 @@ var Reviews={
     },
     update: function(options, callback){
         function updateReview(tx){
-            let sql = "UPDATE reviews SET game_id=?, title=?, comment=?, rating=?, date_posted=? WHERE game_id=?;";
+            let sql = "UPDATE reviews SET game_id=?, title=?, comment=?, rating=?, date_posted=? WHERE review_id=?;";
             tx.executeSql(sql,options,callback,errorHandler);
         }
         function successTransaction(){
@@ -156,7 +156,7 @@ var Reviews={
     },
     delete: function(options, callback){
         function deleteReview(tx){
-            let sql = "DELETE FROM reviews WHERE game_id=?;";
+            let sql = "DELETE FROM reviews WHERE review_id=?;";
             tx.executeSql(sql,options,callback,errorHandler);
         }
         function successTransaction(){
