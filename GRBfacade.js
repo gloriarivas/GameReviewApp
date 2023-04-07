@@ -18,12 +18,14 @@ function addMember(){
         let options = [user_first_name, user_last_name, user_email];
 
         function callback(){
-            console.log("User has been added");
+            alert("User has been added");
         }
         //insert into db; users table
         Users.insert(options,callback);
         //after record is added, reset the form
         resetSignUpValues();
+        //after record is added, go back to all members page
+        $(location).prop('href', "#pageAllMembers");
     }
     else{
         console.log("Sign up form is NOT valid");
@@ -176,19 +178,55 @@ function addGame(){
     if (doValidation_frmAddGame()){
         console.log("Add game is valid");
 
-        let gameTitle = $("#txtGameTitle").val();
-        let publishDate = $("#dtPublishDate").val();
-        let genre = $("#cmbGenre").val();
-        let company = $("#txtCompany").val();
-        console.log(`Game: ${gameTitle}, Date: ${publishDate}, Genre: ${genre}, Company: ${company}`);
-
+        let game_name = $("#txtGameTitle").val();
+        let publish_date = $("#dtPublishDate").val();
+        let genre_id = $("#cmbGenre").val();
+        let company_name = $("#txtCompany").val();
+        console.log(`Game: ${game_name}, Date: ${publish_date}, Genre: ${genre_id}, Company: ${company_name}`);
+        let options = [game_name, publish_date, genre_id, company_name];
         function callback(){
             console.log("New Game has been added");
         }
+        Games.insert(options, callback);
     }
     else{
         console.log("Add game is NOT valid");
     }
+}
+
+//select all games
+function getAllGames(){
+    let options = [];
+
+    function callbackGames(tx,results){
+        let htmlCode = "";
+        let lv = $("#lstGames");
+
+        for (let i = 0; i< results.rows.length; i++){
+            let row = results.rows[i];
+            console.log(row);
+            htmlCode += `<li>
+                            <a data-inset="true" data-row-id="${row['game_id']}" href="#">
+                                <h2>${row['game_name']}</h2>
+                                <p>
+                                    Created by: ${row['company_name']}<br>
+                                    Publish Date: ${row['publish_date']}<br>
+                                </p>
+                            </a>
+                        </li>`;
+
+        }
+        lv = lv.html(htmlCode);
+        lv.listview("refresh");
+
+        //add a click event to take to details page
+        function linkClickHandler(){
+            localStorage.setItem("game_id", $(this).attr('data-row-id'));
+            $(location).prop('href', "#pageGameDetail");
+        }
+        $("#lstGames").on("click", linkClickHandler);
+    }
+    Games.selectAll(options, callbackGames);
 }
 
 //reset text values to empty
@@ -205,3 +243,22 @@ function resetAddReviewValues(){
     $("#txtReviewRating").val("");
 }
 
+//dropdowns for genres (add game and modify pages)
+function updateGenreDropdown(){
+    let options = [];
+    let htmlCode = "";
+
+    function callback(tx, results){
+        for (var i = 0; i < results.rows.length; i++){
+            let row = results.rows[i];
+
+            htmlCode += `<option value=${row['genre_id']}>${row['genre_name']}</option>`;
+
+            let cBox = $("#cmbGenre");
+            let cBoxModify = $("#cmbModifyGenre");
+            cBox = cBox.html(htmlCode).change();
+            cBoxModify = cBoxModify.html(htmlCode).change();
+        }
+    }
+    Genre.selectAll(options, callback);
+}
