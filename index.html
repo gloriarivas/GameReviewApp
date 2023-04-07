@@ -299,48 +299,16 @@ email:      grivas8325@conestogac.on.ca
 
             <section data-role="content">
                 <div class="reviewListHeader">
-                    <h1 class="pageHead">Reviews for Minecraft</h1>
+                    <h1 class="pageHead" id="reviewsHead">Reviews for Minecraft</h1>
                     <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
                 </div>
                 <div class="buttons">
                     <a href="#pageAddReview" data-role="button" data-inline="true">Add A Review</a>
-                    <a href="#pageGameList" data-role="button" data-inline="true">Back to Games</a>
+                    <a href="#pageGameList" data-role="button" data-inline="true">Back</a>
                 </div>
-                <h3 class="ratingHeader">Overall Rating: 10/10</h3>
-                <ul data-role="listview" data-inset="true" class="ui-listview-inset"
-                    data-icon="false">
-                    <li>
-                        <a href="#pageReviewDetail" style="width: 90%;">
-                            <h3>TITLE</h3>
-                            <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
-                            <p>Rating: 10/10</p>
-                            <p>Date Posted: 02-01-2023</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#pageReviewDetail" style="width: 90%">
-                            <h3>TITLE</h3>
-                            <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
-                            <p>Rating: 10/10</p>
-                            <p>Date Posted: 02-01-2023</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#pageReviewDetail" style="width: 90%">
-                            <h3>TITLE</h3>
-                            <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
-                            <p>Rating: 10/10</p>
-                            <p>Date Posted: 02-01-2023</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#pageReviewDetail" style="width: 90%">
-                            <h3>TITLE</h3>
-                            <p>Review Comment Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolores eos fugiat, quia vitae voluptatem?</p>
-                            <p>Rating: 10/10</p>
-                            <p>Date Posted: 02-01-2023</p>
-                        </a>
-                    </li>
+                <h3 class="ratingHeader" id="ratingHead">Overall Rating: 10/10</h3>
+                <ul data-role="listview" data-inset="true" data-icon="false" id="lstReviews"
+                    style="width: 100%">
                 </ul>
             </section>
 
@@ -722,6 +690,7 @@ email:      grivas8325@conestogac.on.ca
                     <h1 id="headGameName">Minecraft</h1>
                     <p id="pGameDate">Date Posted: 02-01-2023</p>
                     <p id="pGameGenre">Genre: RPG</p>
+                    <p id="pNumberOfReviews">Reviews: 2</p>
                     <p id="pGameRating">Rating: 10/10</p>
                     <p id="pGameCompany">Game company: Mojang</p>
 

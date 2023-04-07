@@ -150,15 +150,16 @@ function showCurrentGame(){
         $("#pGameDate").html(`Date Published: ${row['publish_date']}`);
         $("#pGameGenre").html(`Genre: ${row['genre_name']}`);
         if (row['rating'] == null){
-            $("#pGameRating").html("No reviews yet!");
+            $("#pNumberOfReviews").html("");
+            $("#pGameRating").html("");
         }
         else{
+            $("#pNumberOfReviews").html(`Reviews: ${row['review_count']}`);
             $("#pGameRating").html(`Rating: ${row['rating']}/10`);
         }
         $("#pGameCompany").html(`Created by: ${row['company_name']}`);
 
     }
-
     Games.selectWithGenreReviews(options, selectGameCallback);
 }
 
@@ -293,5 +294,57 @@ function updateGenreDropdown(){
 
 //get all reviews for a specific game
 function getAllReviews(){
+    let id = localStorage.getItem("game_id");
+    let options = [id];
+
+    function selectReviewsCallback(tx,result){
+        let htmlCode = "";
+        let lv = $("#lstReviews");
+        let rating = 0;
+
+        let firstRow = result.rows[0];
+        console.log(firstRow);
+        //heading
+        $("#reviewsHead").html(`Reviews for ${firstRow['game_name']}`);
+
+        if (firstRow['review_id'] === null){
+            console.log("review id is null");
+            $("#ratingHead").html("No ratings yet!");
+            lv = lv.html(htmlCode);
+            lv.listview("refresh");
+        }
+        else{
+            //loop through each review
+            for (let i = 0; i < result.rows.length; i++) {
+                let row = result.rows[i];
+
+                htmlCode += `<li data-icon="carat-r">
+                                <a data-row-id="${row['review_id']}" href="#" style="width: 83%">
+                                    <h2>${row['title']}</h2>
+                                    <p>
+                                        ${row['comment']}<br>
+                                        Rating: ${row['rating']}/10<br>
+                                        Date Posted: ${row['date_posted']}
+                                    </p>
+                                </a>
+                            </li>`;
+
+                rating += row['rating'];
+            }
+
+            $("#ratingHead").html(`Rating: ${rating/result.rows.length}/10`);
+            lv = lv.html(htmlCode);
+            lv.listview("refresh");
+
+            //add click event
+            function linkClickHandler(){
+                localStorage.setItem("review_id", $(this).attr('data-row-id'));
+                $(location).prop('href', "#pageReviewDetail");
+            }
+            $("#lstReviews a").on("click", linkClickHandler);0
+        }
+
+    }
+    Reviews.selectAll(options, selectReviewsCallback);
 
 }

@@ -57,11 +57,18 @@ function showAllGames_pageshow() {
 }
 
 function btnReviews_click() {
+    //go to reviews page
+    window.location.href = "#pageReviewsList";
+    //populate reviews page
     getAllReviews();
 }
 
 function gameDetails_pageshow() {
     showCurrentGame();
+}
+
+function reviewsList_pageshow() {
+    getAllReviews();
 }
 
 function init(){
@@ -82,6 +89,7 @@ function init(){
     $("#pageModifyMember").on("pageshow", showMember_pageshow);
     $("#pageGameList").on("pageshow", showAllGames_pageshow);
     $("#pageGameDetail").on("pageshow", gameDetails_pageshow);
+    $("#pageReviewsList").on("pageshow", reviewsList_pageshow);
 }
 
 // initializing db

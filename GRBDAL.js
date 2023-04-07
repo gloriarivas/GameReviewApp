@@ -146,7 +146,7 @@ var Reviews={
     },
     selectAll: function(options, callback){
         function selectAllReviews(tx){
-            let sql = "SELECT * FROM reviews;";
+            let sql = "SELECT * FROM reviews RIGHT JOIN games USING (game_id) WHERE game_id=?;";
             tx.executeSql(sql,options,callback,errorHandler);
         }
         function successTransaction(){
