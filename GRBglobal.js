@@ -28,6 +28,7 @@ function signUp_pageshow() {
 
 function addNewGame_pageshow() {
     resetNewGameValues();
+    updateGenreDropdown();
 }
 
 function addReview_pageshow() {
@@ -51,11 +52,24 @@ function btnDeleteMember_click() {
     deleteCurrentUser();
 }
 
+function showAllGames_pageshow() {
+    getAllGames();
+}
+
+function btnReviews_click() {
+    getAllReviews();
+}
+
+function gameDetails_pageshow() {
+    showCurrentGame();
+}
+
 function init(){
     //forms
     $("#btnSignUp").on("click", btnSignUp_click);
     $("#btnModifyMember").on("click", btnModifyMember_click);
     $("#btnDeleteMember").on("click", btnDeleteMember_click);
+    $("#btnReviews").on("click", btnReviews_click);
 
     $("#btnAddReview").on("click", btnAddReview_click);
     $("#btnAddGame").on("click", btnAddGame_click);
@@ -66,6 +80,8 @@ function init(){
 
     $("#pageAllMembers").on("pageshow", showAllMembers_pageshow);
     $("#pageModifyMember").on("pageshow", showMember_pageshow);
+    $("#pageGameList").on("pageshow", showAllGames_pageshow);
+    $("#pageGameDetail").on("pageshow", gameDetails_pageshow);
 }
 
 // initializing db

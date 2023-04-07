@@ -91,6 +91,16 @@ var Games={
         }
         db.transaction(selectAllGames, errorHandler, successTransaction);
     },
+    selectWithGenreReviews: function(options,callback){
+        function selectGamesGenreReviews(tx){
+            let sql = "SELECT game_id, game_name, publish_date, genre_id, company_name, genre_name, COUNT(review_id) AS review_count, AVG(rating) AS rating FROM games LEFT JOIN genre USING (genre_id) LEFT JOIN reviews USING (game_id) WHERE game_id=?;";
+            tx.executeSql(sql,options,callback,errorHandler);
+        }
+        function successTransaction(){
+            console.log("Success: select all games and genres and reviews successful");
+        }
+        db.transaction(selectGamesGenreReviews, errorHandler, successTransaction);
+    },
     update: function(options, callback){
         function updateGame(tx){
             let sql = "UPDATE games SET game_name=?, publish_date=?, genre_id=?, company_name=? WHERE game_id=?;";
