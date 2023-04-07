@@ -158,51 +158,7 @@ email:      grivas8325@conestogac.on.ca
             <section data-role="content">
                 <h1 class="pageHead">Here is a list of our games!</h1>
                 <!--change this to db stuff-->
-                <div data-role="collapsible" data-collapsed-icon="carat-d"
-                     data-expanded-icon="carat-u">
-                    <h1>Minecraft</h1>
-                    <p>
-                        Genre: Adventure <br>
-                        Publish date: November 18, 2011 <br>
-                        Created by: Mojang <br>
-                        Rating: 10/10 <br><!--Will make values change automatically-->
-                        <a href="#pageReviewsList">Reviews: 5</a><br>
-                        <a href="#">Edit Game Info</a>
-                        <a href="#pageAddReview" class="ui-btn ui-corner-all">
-                            Write a Review
-                        </a>
-                    </p>
-                </div>
-                <div data-role="collapsible" data-collapsed-icon="carat-d"
-                     data-expanded-icon="carat-u">
-                    <h1>Minecraft</h1>
-                    <p>
-                        Genre: Adventure <br>
-                        Publish date: November 18, 2011 <br>
-                        Created by: Mojang <br>
-                        Rating: 10/10 <br><!--Will make values change automatically-->
-                        <a href="#pageReviewsList">Reviews: 5</a><br>
-                        <a href="#">Edit Game Info</a>
-                        <a href="#pageAddReview" class="ui-btn ui-corner-all">
-                            Write a Review
-                        </a>
-                    </p>
-                </div>
-                <div data-role="collapsible" data-collapsed-icon="carat-d"
-                     data-expanded-icon="carat-u">
-                    <h1>Minecraft</h1>
-                    <p>
-                        Genre: Adventure <br>
-                        Publish date: November 18, 2011 <br>
-                        Created by: Mojang <br>
-                        Rating: 10/10 <br><!--Will make values change automatically-->
-                        <a href="#pageReviewsList">Reviews: 5</a><br>
-                        <a href="#pageModifyGame">Edit Game Info</a>
-                        <a href="#pageAddReview" class="ui-btn ui-corner-all">
-                            Write a Review
-                        </a>
-                    </p>
-                </div>
+                <ul data-role="listview" data-inset="true" id="lstGames"></ul>
                 <a href="#pageAddNewGame" class="ui-btn ui-corner-all">Add A New Game</a>
 
             </section>
@@ -723,6 +679,55 @@ email:      grivas8325@conestogac.on.ca
                         <input type="date">
                     </div>
                 </form>
+            </section>
+
+            <footer data-role="footer" data-position="fixed" data-theme="a">
+                <h1> &copy; Gloria Rivas-Bonilla 2023</h1>
+            </footer>
+        </div>
+
+<!----------------------------------Game Details page-------------------------------------------->
+        <div id="pageGameDetail" data-role="page" class="page">
+            <header data-role="header" data-position="fixed" data-theme="a">
+                <h1>Review Details</h1>
+                <div data-role="navbar" data-iconpos="top" class="navigation" >
+                    <ul>
+                        <li>
+                            <a href="#pageHome">Home</a>
+                        </li>
+                        <li>
+                            <a href="#pageSignUp">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="#pageGameList" style="background-color: #82ADC9; color: #eeeeee">
+                                Games
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pageAbout">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <section data-role="content">
+                <div class="reviewListHeader">
+                    <h1 class="pageHead">Details</h1>
+                    <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
+                </div>
+                <a href="#pageGameList" style="margin-left: 10px; color: #eeeeee;
+                text-decoration: none">
+                    Back</a>
+                <div class="formsLayout">
+                    <h1 id="headGameName">Minecraft</h1>
+                    <p id="pGameDate">Date Posted: 02-01-2023</p>
+                    <p id="pGameGenre">Genre: RPG</p>
+                    <p id="pGameRating">Rating: 10/10</p>
+                    <p id="pGameCompany">Lorem ipsu</p>
+                    <a href="#pageModifyGame" data-role="button">Edit</a>
+                    <button type="button" id="btnDeleteGameDetail">Delete</button>
+                </div>
+
             </section>
 
             <footer data-role="footer" data-position="fixed" data-theme="a">

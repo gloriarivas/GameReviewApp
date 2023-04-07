@@ -28,6 +28,7 @@ function signUp_pageshow() {
 
 function addNewGame_pageshow() {
     resetNewGameValues();
+    updateGenreDropdown();
 }
 
 function addReview_pageshow() {
@@ -51,6 +52,10 @@ function btnDeleteMember_click() {
     deleteCurrentUser();
 }
 
+function showAllGames_pageshow() {
+    getAllGames();
+}
+
 function init(){
     //forms
     $("#btnSignUp").on("click", btnSignUp_click);
@@ -66,6 +71,7 @@ function init(){
 
     $("#pageAllMembers").on("pageshow", showAllMembers_pageshow);
     $("#pageModifyMember").on("pageshow", showMember_pageshow);
+    $("#pageGameList").on("pageshow", showAllGames_pageshow);
 }
 
 // initializing db
