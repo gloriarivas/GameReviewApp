@@ -43,6 +43,7 @@ function doValidation_frmSignUp(){
     return form.valid();
 }
 
+//validation for modify user
 function doValidation_frmModifyMember(){
     let form = $("#frmModifyMember");
     form.validate({
@@ -147,6 +148,42 @@ function doValidation_frmAddGame(){
             }
         }
     });
+    return form.valid();
+}
+
+//Validations for Modify game
+function doValidation_frmModifyGame(){
+
+    let form = $("#frmModifyGame");
+
+    form.validate({
+        rules:{
+            txtModifyGameTitle:{
+                required: true,
+                maxlength: 100 //db max is 100, so 100 as to not give the db any errors
+            },
+            dtModifyPublishDate:{
+                required: true,
+                maxDate: true
+            },
+            txtModifyCompany:{
+                required: true
+            }
+        },
+        messages:{
+            txtModifyGameTitle:{
+                required: "Game Title is required",
+                maxlength: "Max allowed characters is 25"
+            },
+            dtModifyPublishDate:{
+                required:"Publish Date is required"
+            },
+            txtModifyCompany:{
+                required: "Company name is required"
+            }
+        }
+    });
+
     return form.valid();
 }
 

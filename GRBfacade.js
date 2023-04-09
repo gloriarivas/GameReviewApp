@@ -163,6 +163,7 @@ function showCurrentGame(){
 
         }
         else if (location.hash === "#pageModifyGame"){
+            //populate form with game data from db
             $("#modifyGameHead").html(`Edit ${row['game_name']}`);
             $("#modGameHead").html(row['game_name']);
             $("#txtModifyGameTitle").val(row["game_name"]);
@@ -174,6 +175,32 @@ function showCurrentGame(){
 
     }
     Games.selectWithGenreReviews(options, selectGameCallback);
+}
+
+//update game in db
+function updateGame(){
+    if (doValidation_frmModifyGame()){
+
+        console.log("Modify game is valid");
+
+        //add game id
+        let game_id = localStorage.getItem("game_id");
+        let game_name = $("#txtModifyGameTitle").val();
+        let publish_date = $("#dtModifyPublishDate").val();
+        let genre_id = $("#cmbModifyGenre").val();
+        let company_name = $("#txtModifyCompany").val();
+
+        console.log(`Game: ${game_name}, Date: ${publish_date}, Genre: ${genre_id}, Company: ${company_name}`);
+        let options = [game_name, publish_date, genre_id, company_name, game_id];
+        function callback(){
+            alert(`${game_name} has been updated`);
+            $(location).prop('href', "#pageGameList");
+        }
+        Games.update(options, callback);
+    }
+    else{
+        console.log("Modify game is NOT valid");
+    }
 }
 
 

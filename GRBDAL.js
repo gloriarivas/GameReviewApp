@@ -107,7 +107,7 @@ var Games={
             tx.executeSql(sql,options,callback,errorHandler);
         }
         function successTransaction(){
-            console.log("Success: select all users successful");
+            console.log("Success: update game successful");
         }
         db.transaction(updateGame, errorHandler, successTransaction);
     },

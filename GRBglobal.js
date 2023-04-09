@@ -85,6 +85,10 @@ function pageModifyGame_pageshow() {
     showCurrentGame();
 }
 
+function btnModifyGame_click() {
+    updateGame();
+}
+
 function init(){
     //buttons
     //signup page
@@ -112,7 +116,7 @@ function init(){
     $("#btnAddGame").on("click", btnAddGame_click);
 
     //modify/delete game
-    // $("#btnModifyGame").on("click", btnModifyGame_click);
+     $("#btnModifyGame").on("click", btnModifyGame_click);
     // $("#btnDeleteGame").on("click", btnDeleteGame_click);
 
     // refresh page forms on pageshow
