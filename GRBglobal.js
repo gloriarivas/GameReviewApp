@@ -71,15 +71,50 @@ function reviewsList_pageshow() {
     getAllReviews();
 }
 
+function reviewsDetails_pageshow() {
+    getOneReview();
+}
+
+function btnEditGame_click() {
+    window.location.href = "#pageModifyGame";
+    //populate page with db data
+    showCurrentGame();
+}
+
+function pageModifyGame_pageshow() {
+    showCurrentGame();
+}
+
 function init(){
-    //forms
+    //buttons
+    //signup page
     $("#btnSignUp").on("click", btnSignUp_click);
+
+    //modify/delete member page
     $("#btnModifyMember").on("click", btnModifyMember_click);
     $("#btnDeleteMember").on("click", btnDeleteMember_click);
-    $("#btnReviews").on("click", btnReviews_click);
 
+    //game details page
+    $("#btnReviews").on("click", btnReviews_click);
+    $("#btnEditGame").on("click", btnEditGame_click);
+    // $("#btnDeleteGameDetail").on("click", btnDeleteGame_click);
+
+    //reviews details
+    // $("#btnDeleteReview").on("click", btnDeleteReview_click);
+
+    //modify/delete review
+    // $("#btnModifyReview").on("click", btnModifyReview_click);
+
+    //add review
     $("#btnAddReview").on("click", btnAddReview_click);
+
+    //add game
     $("#btnAddGame").on("click", btnAddGame_click);
+
+    //modify/delete game
+    // $("#btnModifyGame").on("click", btnModifyGame_click);
+    // $("#btnDeleteGame").on("click", btnDeleteGame_click);
+
     // refresh page forms on pageshow
     $("#pageSignUp").on("pageshow", signUp_pageshow);
     $("#pageAddNewGame").on("pageshow", addNewGame_pageshow);
@@ -90,6 +125,10 @@ function init(){
     $("#pageGameList").on("pageshow", showAllGames_pageshow);
     $("#pageGameDetail").on("pageshow", gameDetails_pageshow);
     $("#pageReviewsList").on("pageshow", reviewsList_pageshow);
+
+    //for debugging
+    $("#pageModifyGame").on("pageshow", pageModifyGame_pageshow);
+    $("#pageReviewDetail").on("pageshow", reviewsDetails_pageshow);
 }
 
 // initializing db

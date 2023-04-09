@@ -480,7 +480,7 @@ email:      grivas8325@conestogac.on.ca
 <!------------------------------------Modify Game page--------------------------------------------->
         <div id="pageModifyGame" data-role="page" class="page">
             <header data-role="header" data-position="fixed" data-theme="a">
-                <h1>Edit GameName</h1>
+                <h1 id="modifyGameHead">Edit GameName</h1>
                 <div data-role="navbar" data-iconpos="top" class="navigation" >
                     <ul>
                         <li>
@@ -505,14 +505,14 @@ email:      grivas8325@conestogac.on.ca
                     <img src="img/joyconblue.png" class="left">
                     <!--<a target="_blank" href="https://icons8.com/icon/FdGD2HZEsXHj/joy-con">Joy
                     Con</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
-                    <h1 class="pageHead">GameName</h1>
+                    <h1 class="pageHead" id="modGameHead">GameName</h1>
                     <img src="img/joyconred.png" class="right">
                 </div>
                 <form id="frmAddModifyGame" name="frmModifyAddGame" class="formsLayout">
-                    <label for="txtGameTitle">Game Title</label>
+                    <label for="txtModifyGameTitle">Game Title</label>
                     <input type="text" id="txtModifyGameTitle" name="txtModifyGameTitle">
 
-                    <label for="dtPublishDate">Publish Date</label>
+                    <label for="dtModifyPublishDate">Publish Date</label>
                     <input type="date" id="dtModifyPublishDate" name="dtModifyPublishDate">
 
                     <label for="cmbModifyGenre">Genre</label>
@@ -580,13 +580,13 @@ email:      grivas8325@conestogac.on.ca
                 <a href="#pageReviewsList" style="margin-left: 10px; color: #eeeeee;
                 text-decoration: none">
                     Back</a>
-                <div class="formsLayout">
+                <div class="formsLayout" id="txtReviewDetails">
                     <h1>TITLE</h1>
                     <p>Date Posted: 02-01-2023</p>
                     <p>Rating: 10/10</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias asperiores aspernatur autem delectus dignissimos distinctio ducimus earum eos, eveniet ex fuga, fugit inventore ipsum iste magni nam natus non nulla odit officiis, praesentium repellat sunt vel vitae voluptatem voluptatum.</p>
                     <a href="#pageModifyReview" data-role="button">Edit</a>
-                    <button type="button">Delete</button>
+                    <button type="button" id="btnDeleteReview">Delete</button>
                 </div>
 
             </section>
@@ -657,7 +657,7 @@ email:      grivas8325@conestogac.on.ca
 <!----------------------------------Game Details page-------------------------------------------->
         <div id="pageGameDetail" data-role="page" class="page">
             <header data-role="header" data-position="fixed" data-theme="a">
-                <h1>Review Details</h1>
+                <h1>Game Details</h1>
                 <div data-role="navbar" data-iconpos="top" class="navigation" >
                     <ul>
                         <li>

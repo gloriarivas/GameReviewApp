@@ -144,24 +144,38 @@ function showCurrentGame(){
     function selectGameCallback(tx,results){
         let row = results.rows[0];
         console.log(row);
+        console.log(location.hash);
+        //change output depending on what page is displayed
+        if (location.hash === "#pageGameDetail"){
+            //give the values to text boxes
+            $("#headGameName").html(row['game_name']);
+            $("#pGameDate").html(`Date Published: ${row['publish_date']}`);
+            $("#pGameGenre").html(`Genre: ${row['genre_name']}`);
+            if (row['rating'] == null){
+                $("#pNumberOfReviews").html("");
+                $("#pGameRating").html("");
+            }
+            else{
+                $("#pNumberOfReviews").html(`Reviews: ${row['review_count']}`);
+                $("#pGameRating").html(`Rating: ${row['rating']}/10`);
+            }
+            $("#pGameCompany").html(`Created by: ${row['company_name']}`);
 
-        //give the values to text boxes
-        $("#headGameName").html(row['game_name']);
-        $("#pGameDate").html(`Date Published: ${row['publish_date']}`);
-        $("#pGameGenre").html(`Genre: ${row['genre_name']}`);
-        if (row['rating'] == null){
-            $("#pNumberOfReviews").html("");
-            $("#pGameRating").html("");
         }
-        else{
-            $("#pNumberOfReviews").html(`Reviews: ${row['review_count']}`);
-            $("#pGameRating").html(`Rating: ${row['rating']}/10`);
+        else if (location.hash === "#pageModifyGame"){
+            $("#modifyGameHead").html(`Edit ${row['game_name']}`);
+            $("#modGameHead").html(row['game_name']);
+            $("#txtModifyGameTitle").val(row["game_name"]);
+            $("#dtModifyPublishDate").val(row['publish_date']);
+            $("#cmbModifyGenre").prop("selectedIndex", row['genre_id']).change();
+            $("#txtModifyCompany").val(row['company_name']);
+
         }
-        $("#pGameCompany").html(`Created by: ${row['company_name']}`);
 
     }
     Games.selectWithGenreReviews(options, selectGameCallback);
 }
+
 
 //delete selected user from the database
 function deleteCurrentUser(){
@@ -214,7 +228,8 @@ function addGame(){
         console.log(`Game: ${game_name}, Date: ${publish_date}, Genre: ${genre_id}, Company: ${company_name}`);
         let options = [game_name, publish_date, genre_id, company_name];
         function callback(){
-            console.log("New Game has been added");
+            alert("New Game has been added");
+            $(location).prop('href', "#pageGameList");
         }
         Games.insert(options, callback);
     }
@@ -341,10 +356,20 @@ function getAllReviews(){
                 localStorage.setItem("review_id", $(this).attr('data-row-id'));
                 $(location).prop('href', "#pageReviewDetail");
             }
-            $("#lstReviews a").on("click", linkClickHandler);0
+            $("#lstReviews a").on("click", linkClickHandler);
         }
 
     }
     Reviews.selectAll(options, selectReviewsCallback);
+}
 
+function getOneReview(){
+    let id = localStorage.getItem("review_id");
+    let options = [id];
+
+    function selectReviewCallback(tx,results){
+
+        //give values to page
+
+    }
 }
