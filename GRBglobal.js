@@ -89,6 +89,10 @@ function btnModifyGame_click() {
     updateGame();
 }
 
+function btnDeleteGame_click() {
+    deleteCurrentGame();
+}
+
 function init(){
     //buttons
     //signup page
@@ -101,7 +105,7 @@ function init(){
     //game details page
     $("#btnReviews").on("click", btnReviews_click);
     $("#btnEditGame").on("click", btnEditGame_click);
-    // $("#btnDeleteGameDetail").on("click", btnDeleteGame_click);
+    $("#btnDeleteGameDetail").on("click", btnDeleteGame_click);
 
     //reviews details
     // $("#btnDeleteReview").on("click", btnDeleteReview_click);

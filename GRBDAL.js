@@ -113,7 +113,7 @@ var Games={
     },
     delete: function(options, callback){
         function deleteGame(tx){
-            let sql = "DELETE FROM game WHERE game_id=?;";
+            let sql = "DELETE FROM games WHERE game_id=?;";
             tx.executeSql(sql,options,callback,errorHandler);
         }
         function successTransaction(){

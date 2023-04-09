@@ -6,7 +6,7 @@
  */
 
 
-//users pages
+/**               USERS PAGES                     **/
 function addMember(){
     if (doValidation_frmSignUp()){
         console.log("Sign Up form is valid");
@@ -134,6 +134,27 @@ function showCurrentUser(){
     Users.select(options, selectUserCallback);
 }
 
+//delete selected user from the database
+function deleteCurrentUser(){
+    let user_id = localStorage.getItem("user_id");
+    let options = [user_id];
+
+    function callback(){
+        alert("User Deleted");
+        //go back to all members page
+        $(location).prop('href', "#pageAllMembers");
+    }
+    Users.delete(options, callback);
+}
+
+function resetSignUpValues(){
+    $("#txtFirstName").val("");
+    $("#txtLastName").val("");
+    $("#txtEmail").val("");
+}
+
+
+/**               GAMES PAGES             **/
 //select one game from the games table
 function showCurrentGame(){
     //get id from local storage
@@ -170,9 +191,7 @@ function showCurrentGame(){
             $("#dtModifyPublishDate").val(row['publish_date']);
             $("#cmbModifyGenre").prop("selectedIndex", row['genre_id']).change();
             $("#txtModifyCompany").val(row['company_name']);
-
         }
-
     }
     Games.selectWithGenreReviews(options, selectGameCallback);
 }
@@ -203,45 +222,17 @@ function updateGame(){
     }
 }
 
-
-//delete selected user from the database
-function deleteCurrentUser(){
-    let user_id = localStorage.getItem("user_id");
-    let options = [user_id];
+//delete selected game from the database
+function deleteCurrentGame(){
+    let game_id = localStorage.getItem("game_id");
+    let options = [game_id];
 
     function callback(){
-        alert("User Deleted");
-        //go back to all members page
-        $(location).prop('href', "#pageAllMembers");
+        alert("Game Deleted");
+        //go back to all games page
+        $(location).prop('href', "#pageGameList");
     }
-    Users.delete(options, callback);
-}
-
-function resetSignUpValues(){
-    $("#txtFirstName").val("");
-    $("#txtLastName").val("");
-    $("#txtEmail").val("");
-}
-
-
-//game pages
-function addReview(){
-    if (doValidation_frmAddReview()){
-        console.log("Add review is valid");
-
-        let title = $("#txtReviewTitle").val();
-        let comments = $("#txtReviewComments").val();
-        let rating = $("#txtReviewRating").val();
-        console.log(`Title: ${title}, Comments: ${comments}, Rating: ${rating}`);
-
-        function callback(){
-            console.log("Review has been added");
-        }
-        //insert into db; reviews table
-    }
-    else{
-        console.log("Add review form is NOT valid");
-    }
+    Games.delete(options, callback);
 }
 
 function addGame(){
@@ -307,13 +298,6 @@ function resetNewGameValues(){
     $("#txtCompany").val("");
 }
 
-//review pages
-function resetAddReviewValues(){
-    $("#txtReviewTitle").val("");
-    $("#txtReviewComments").val("");
-    $("#txtReviewRating").val("");
-}
-
 //dropdowns for genres (add game and modify pages)
 function updateGenreDropdown(){
     let options = [];
@@ -334,6 +318,33 @@ function updateGenreDropdown(){
     Genre.selectAll(options, callback);
 }
 
+
+/**                         REVIEW PAGES                **/
+function addReview(){
+    if (doValidation_frmAddReview()){
+        console.log("Add review is valid");
+
+        let title = $("#txtReviewTitle").val();
+        let comments = $("#txtReviewComments").val();
+        let rating = $("#txtReviewRating").val();
+        console.log(`Title: ${title}, Comments: ${comments}, Rating: ${rating}`);
+
+        function callback(){
+            console.log("Review has been added");
+        }
+        //insert into db; reviews table
+    }
+    else{
+        console.log("Add review form is NOT valid");
+    }
+}
+
+function resetAddReviewValues(){
+    $("#txtReviewTitle").val("");
+    $("#txtReviewComments").val("");
+    $("#txtReviewRating").val("");
+}
+
 //get all reviews for a specific game
 function getAllReviews(){
     let id = localStorage.getItem("game_id");
@@ -351,7 +362,7 @@ function getAllReviews(){
 
         if (firstRow['review_id'] === null){
             console.log("review id is null");
-            $("#ratingHead").html("No ratings yet!");
+            $("#ratingHead").html("No reviews yet!");
             lv = lv.html(htmlCode);
             lv.listview("refresh");
         }
