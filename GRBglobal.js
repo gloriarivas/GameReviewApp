@@ -78,11 +78,13 @@ function reviewsDetails_pageshow() {
 function btnEditGame_click() {
     window.location.href = "#pageModifyGame";
     //populate page with db data
-    showCurrentGame();
+    updateGenreDropdown();
+    modifyGamePage();
 }
 
 function pageModifyGame_pageshow() {
-    showCurrentGame();
+    updateGenreDropdown();
+    modifyGamePage();
 }
 
 function btnModifyGame_click() {
@@ -101,6 +103,10 @@ function btnModifyReview_click() {
     updateReview();
 }
 
+function btnDeleteReview_click() {
+    deleteCurrentReview();
+}
+
 function init(){
     //buttons
     //signup page
@@ -116,7 +122,7 @@ function init(){
     $("#btnDeleteGameDetail").on("click", btnDeleteGame_click);
 
     //reviews details
-    // $("#btnDeleteReview").on("click", btnDeleteReview_click);
+    $("#btnDeleteReview").on("click", btnDeleteReview_click);
 
     //modify/delete review
     $("#btnModifyReview").on("click", btnModifyReview_click);

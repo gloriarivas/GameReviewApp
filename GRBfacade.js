@@ -167,7 +167,7 @@ function showCurrentGame(){
         console.log(row);
         console.log(location.hash);
         //change output depending on what page is displayed
-        if (location.hash === "#pageGameDetail"){
+        // if (location.hash === "#pageGameDetail"){
             //give the values to text boxes
             $("#headGameName").html(row['game_name']);
             $("#pGameDate").html(`Date Published: ${row['publish_date']}`);
@@ -182,20 +182,43 @@ function showCurrentGame(){
             }
             $("#pGameCompany").html(`Created by: ${row['company_name']}`);
 
-        }
-        else if (location.hash === "#pageModifyGame"){
-            //populate form with game data from db
-            $("#modifyGameHead").html(`Edit ${row['game_name']}`);
-            $("#modGameHead").html(row['game_name']);
-            $("#txtModifyGameTitle").val(row["game_name"]);
-            $("#dtModifyPublishDate").val(row['publish_date']);
-            $("#cmbModifyGenre").prop("selectedIndex", row['genre_id']).change();
-            $("#txtModifyCompany").val(row['company_name']);
-        }
+        // }
+        // else if (location.hash === "#pageModifyGame"){
+        //     console.log(row['genre_id']);
+        //     //populate form with game data from db
+        //     $("#modifyGameHead").html(`Edit ${row['game_name']}`);
+        //     $("#modGameHead").html(row['game_name']);
+        //     $("#txtModifyGameTitle").val(row["game_name"]);
+        //     $("#dtModifyPublishDate").val(row['publish_date']);
+        //     $("#cmbModifyGenre").prop("selectedIndex", row['genre_id']).change();
+        //     $("#txtModifyCompany").val(row['company_name']);
+        //
+        // }
     }
     Games.selectWithGenreReviews(options, selectGameCallback);
 }
 
+function modifyGamePage(){
+    let id = localStorage.getItem("game_id");
+    let options = [id];
+    console.log(id);
+
+    function callback(tx, results){
+        let row = results.rows[0];
+        console.log(row['genre_id']);
+        //populate form with game data from db
+        $("#modifyGameHead").html(`Edit ${row['game_name']}`);
+        $("#modGameHead").html(row['game_name']);
+        $("#txtModifyGameTitle").val(row["game_name"]);
+        $("#dtModifyPublishDate").val(row['publish_date']);
+        //$("#cmbModifyGenre").prop("selectedIndex", row['genre_id']).change();
+        // $("#cmbModifyGenre").prop("selectedIndex", row['genre_id'] ).change();
+        $("#cmbModifyGenre").prop("selectedIndex", row['genre_id']-1).change();
+        $("#txtModifyCompany").val(row['company_name']);
+
+    }
+    Games.selectWithGenreReviews(options, callback);
+}
 //update game in db
 function updateGame(){
     if (doValidation_frmModifyGame()){
@@ -383,7 +406,7 @@ function getAllReviews(){
 
                 //reformat date posted
                 let date = row['date_posted'];
-                date = date.substring(0,10);
+                date = date.substring(0,16);
 
                 htmlCode += `<li data-icon="carat-r">
                                 <a data-row-id="${row['review_id']}" href="#" style="width: 83%">
@@ -398,7 +421,6 @@ function getAllReviews(){
 
                 rating += row['rating'];
             }
-
             $("#ratingHead").html(`Rating: ${rating/result.rows.length}/10`);
             lv = lv.html(htmlCode);
             lv.listview("refresh");
@@ -472,4 +494,18 @@ function updateReview(){
     else{
         console.log("Modify review is NOT valid");
     }
+}
+
+//delete selected review from the database
+function deleteCurrentReview(){
+    let review_id = localStorage.getItem("review_id");
+    let options = [review_id];
+
+    function callback(){
+        alert("Review Deleted");
+        //go back to review list
+        $(location).prop('href', "#pageReviewsList");
+    }
+    //delete review from db table
+    Reviews.delete(options, callback);
 }
