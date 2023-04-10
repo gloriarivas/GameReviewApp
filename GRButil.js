@@ -117,6 +117,41 @@ function doValidation_frmAddReview(){
     return form.valid();
 }
 
+function doValidation_frmModifyReview(){
+    let form = $("#frmModifyReview");
+    form.validate({
+        rules:{
+            txtModifyReviewTitle:{
+                required: true,
+                maxlength: 30
+            },
+            txtModifyReviewComments:{
+                required: true,
+                minlength: 5
+            },
+            txtModifyReviewRating:{
+                required: true,
+                minlength: 0,
+                maxlength: 10
+            }
+        },
+        messages:{
+            txtModifyReviewTitle:{
+                required: "Review must have a title",
+                maxlength: "Max characters for title is 30"
+            },
+            txtModifyReviewComments:{
+                required: "Review needs to have comments",
+                minlength: "Comment needs to be at least 5 characters long"
+            },
+            txtModifyReviewRating:{
+                required: "A rating is required"
+            }
+        }
+    });
+    return form.valid();
+}
+
 //Validations for Add Game
 function doValidation_frmAddGame(){
     let form = $("#frmAddGame");

@@ -209,9 +209,9 @@ var DB = {
         function insertIntoReviews(tx){
             let sql = "INSERT INTO reviews (game_id, title, comment, rating, date_posted)" +
                 "VALUES" +
-                "(1, 'Best game ever!', 'This game is so good, best game ever', 10, '2016-01-01 10:20:05.123')," +
-                "(4, 'Too Fast', 'The cars go way too fast for me, I cannot keep up worst game ever', 2, '2018-01-05 06:12:54.144')," +
-                "(1, 'Good game', 'Not my favourite, but still really good', 8, '2023-02-04 12:45:15:222');";
+                "(1, 'Best game ever!', 'This game is so good, best game ever', 10, '2016-01-01 10:20')," +
+                "(4, 'Too Fast', 'The cars go way too fast for me, I cannot keep up worst game ever', 2, '2018-01-05 06:12')," +
+                "(1, 'Good game', 'Not my favourite, but still really good', 8, '2023-02-04 12:45');";
 
             let options = [];
             function success(){

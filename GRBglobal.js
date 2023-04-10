@@ -93,6 +93,14 @@ function btnDeleteGame_click() {
     deleteCurrentGame();
 }
 
+function pageModifyReview_pageshow() {
+    getOneReview();
+}
+
+function btnModifyReview_click() {
+    updateReview();
+}
+
 function init(){
     //buttons
     //signup page
@@ -111,7 +119,7 @@ function init(){
     // $("#btnDeleteReview").on("click", btnDeleteReview_click);
 
     //modify/delete review
-    // $("#btnModifyReview").on("click", btnModifyReview_click);
+    $("#btnModifyReview").on("click", btnModifyReview_click);
 
     //add review
     $("#btnAddReview").on("click", btnAddReview_click);
@@ -133,10 +141,10 @@ function init(){
     $("#pageGameList").on("pageshow", showAllGames_pageshow);
     $("#pageGameDetail").on("pageshow", gameDetails_pageshow);
     $("#pageReviewsList").on("pageshow", reviewsList_pageshow);
-
-    //for debugging
+    $("#pageModifyReview").on("pageshow", pageModifyReview_pageshow);
     $("#pageModifyGame").on("pageshow", pageModifyGame_pageshow);
     $("#pageReviewDetail").on("pageshow", reviewsDetails_pageshow);
+
 }
 
 // initializing db

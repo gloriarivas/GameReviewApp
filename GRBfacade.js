@@ -428,12 +428,48 @@ function getOneReview(){
         let datePosted = row['date_posted'];
         datePosted = datePosted.substring(0,10);
 
-
-        //details page
-        $("#txtReviewDetailsTitle").html(row['title']);
-        $("#txtReviewDetailDatePosted").html(`Date posted: ${datePosted}`);
-        $("#txtReviewDetailRating").html(`Rating: ${row['rating']}/10`);
-        $("#txtReviewDetailComment").html(row['comment']);
+        if(location.hash === "#pageReviewDetail"){
+            //details page
+            $("#txtReviewDetailsTitle").html(row['title']);
+            $("#txtReviewDetailDatePosted").html(`Date posted: ${datePosted}`);
+            $("#txtReviewDetailRating").html(`Rating: ${row['rating']}/10`);
+            $("#txtReviewDetailComment").html(row['comment']);
+        }
+        else if(location.hash === "#pageModifyReview"){
+            //modify page
+            $("#reviewHead").html(`Edit a review for ${row['game_name']}`);
+            $("#txtModifyReviewTitle").val(row['title']);
+            $("#txtModifyReviewComments").val(row['comment']);
+            $("#txtModifyReviewRating").val(row['rating']);
+        }
     }
     Reviews.select(options, selectReviewCallback);
+}
+
+function updateReview(){
+    if(doValidation_frmModifyReview()){
+        console.log("Modify review is valid");
+
+        let review_id = localStorage.getItem("review_id");
+        //get the current date and time
+        let now = new Date();
+        let date_posted = now.toISOString().slice(0, 16).replace('T', ' ');
+        let title = $("#txtModifyReviewTitle").val();
+        let comment = $("#txtModifyReviewComments").val();
+        let rating = $("#txtModifyReviewRating").val();
+        let game_id = localStorage.getItem("game_id");
+
+        console.log(`Title: ${title}, Comments: ${comment}, Rating: ${rating}, Game ID: ${game_id}`);
+        let options = [game_id, title, comment, rating, date_posted, review_id];
+
+        function callback(){
+            alert("Review has been updated");
+            $(location).prop('href', "#pageReviewsList");
+        }
+        //update reviews table in db
+        Reviews.update(options, callback);
+    }
+    else{
+        console.log("Modify review is NOT valid");
+    }
 }
