@@ -324,15 +324,25 @@ function addReview(){
     if (doValidation_frmAddReview()){
         console.log("Add review is valid");
 
+        //get the current date and time to add to the db
+        let now = new Date();
+        let date_posted = now.toISOString().slice(0, 16).replace('T', ' ');
+        console.log(date_posted);
+
         let title = $("#txtReviewTitle").val();
-        let comments = $("#txtReviewComments").val();
+        let comment = $("#txtReviewComments").val();
         let rating = $("#txtReviewRating").val();
-        console.log(`Title: ${title}, Comments: ${comments}, Rating: ${rating}`);
+        let game_id = localStorage.getItem("game_id");
+
+        console.log(`Title: ${title}, Comments: ${comment}, Rating: ${rating}, Game ID: ${game_id}`);
+        let options = [game_id, title, comment, rating, date_posted];
 
         function callback(){
-            console.log("Review has been added");
+            alert("Review has been added");
+            $(location).prop('href', "#pageReviewsList");
         }
         //insert into db; reviews table
+        Reviews.insert(options,callback);
     }
     else{
         console.log("Add review form is NOT valid");
@@ -371,13 +381,17 @@ function getAllReviews(){
             for (let i = 0; i < result.rows.length; i++) {
                 let row = result.rows[i];
 
+                //reformat date posted
+                let date = row['date_posted'];
+                date = date.substring(0,10);
+
                 htmlCode += `<li data-icon="carat-r">
                                 <a data-row-id="${row['review_id']}" href="#" style="width: 83%">
                                     <h2>${row['title']}</h2>
                                     <p>
                                         ${row['comment']}<br>
                                         Rating: ${row['rating']}/10<br>
-                                        Date Posted: ${row['date_posted']}
+                                        Date Posted: ${date}
                                     </p>
                                 </a>
                             </li>`;
@@ -404,10 +418,22 @@ function getAllReviews(){
 function getOneReview(){
     let id = localStorage.getItem("review_id");
     let options = [id];
+    console.log(id);
 
     function selectReviewCallback(tx,results){
 
         //give values to page
+        let row = results.rows[0];
+        console.log(row);
+        let datePosted = row['date_posted'];
+        datePosted = datePosted.substring(0,10);
 
+
+        //details page
+        $("#txtReviewDetailsTitle").html(row['title']);
+        $("#txtReviewDetailDatePosted").html(`Date posted: ${datePosted}`);
+        $("#txtReviewDetailRating").html(`Rating: ${row['rating']}/10`);
+        $("#txtReviewDetailComment").html(row['comment']);
     }
+    Reviews.select(options, selectReviewCallback);
 }

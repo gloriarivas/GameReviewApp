@@ -508,7 +508,7 @@ email:      grivas8325@conestogac.on.ca
                     <h1 class="pageHead" id="modGameHead">GameName</h1>
                     <img src="img/joyconred.png" class="right">
                 </div>
-                <form id="frmAddModifyGame" name="frmModifyAddGame" class="formsLayout">
+                <form id="frmModifyGame" name="frmModifyGame" class="formsLayout">
                     <label for="txtModifyGameTitle">Game Title</label>
                     <input type="text" id="txtModifyGameTitle" name="txtModifyGameTitle">
 
@@ -574,17 +574,20 @@ email:      grivas8325@conestogac.on.ca
 
             <section data-role="content">
                 <div class="reviewListHeader">
-                    <h1 class="pageHead">Details</h1>
+                    <h1 class="pageHead" id="reviewDetailsHead">Details</h1>
                     <img src="img/CatWithMagnifyingGlass.png" style="width: 100px;">
                 </div>
                 <a href="#pageReviewsList" style="margin-left: 10px; color: #eeeeee;
                 text-decoration: none">
                     Back</a>
                 <div class="formsLayout" id="txtReviewDetails">
-                    <h1>TITLE</h1>
-                    <p>Date Posted: 02-01-2023</p>
-                    <p>Rating: 10/10</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias asperiores aspernatur autem delectus dignissimos distinctio ducimus earum eos, eveniet ex fuga, fugit inventore ipsum iste magni nam natus non nulla odit officiis, praesentium repellat sunt vel vitae voluptatem voluptatum.</p>
+                    <h1 id="txtReviewDetailsTitle">TITLE</h1>
+                    <p id="txtReviewDetailDatePosted">Date Posted: 02-01-2023</p>
+                    <p id="txtReviewDetailRating">Rating: 10/10</p>
+                    <p id="txtReviewDetailComment">Lorem ipsum dolor sit amet, consectetur
+                                                 adipisicing elit.
+                                  Adipisci alias
+                        asperiores aspernatur autem delectus dignissimos distinctio ducimus earum eos, eveniet ex fuga, fugit inventore ipsum iste magni nam natus non nulla odit officiis, praesentium repellat sunt vel vitae voluptatem voluptatum.</p>
                     <a href="#pageModifyReview" data-role="button">Edit</a>
                     <button type="button" id="btnDeleteReview">Delete</button>
                 </div>
